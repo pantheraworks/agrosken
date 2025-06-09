@@ -9,7 +9,7 @@ export const Services = () => {
     services.find((service) => service.id === activeServiceId) || services[0];
 
   return (
-    <div className="min-w-screen min-h-screen bg-[#261501] flex flex-col items-center px-20 py-20 justify-between">
+    <div className="w-screen h-screen bg-[#261501] flex flex-col items-center px-20 py-20 justify-between">
       <div className="py-7 gap-6 flex flex-col items-center text-center">
         <div className="text-5xl font-bold">
           Smart Solutions for Smarter Farming
