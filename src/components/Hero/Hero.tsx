@@ -27,12 +27,21 @@ export const Hero = () => {
             </motion.span>
           ))}
         </div>
-        <div className="flex items-center h-8 gap-2">
+        <motion.div
+          className="flex items-center h-8 gap-2"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 2.0,
+            duration: 0.8,
+            ease: "easeOut",
+          }}
+        >
           <div className="bg-amber-300 h-full aspect-square rounded-full flex items-center justify-center font-bold">
             &gt;
           </div>
           <div className="text-lg font-bold">Get Started</div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
