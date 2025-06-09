@@ -34,4 +34,4 @@ export const ServiceCard = ({
       </div>
     </div>
   );
-}; 
+};

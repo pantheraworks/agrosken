@@ -1,28 +1,12 @@
 import service1 from "../../assets/service_1.png";
 import { ServiceCard } from "../../components/ServiceCard/ServiceCard";
+import { Navbar } from "../../components/Navbar/Navbar";
 
 export const LandingPage = () => {
   return (
     <div className="flex flex-col w-screen scroll-auto">
       <div className="flex h-screen w-screen bg-[url(/src/assets/landing_bg.png)] bg-cover bg-center items-end">
-        <div
-          className="fixed top-0 w-full px-30 navbar"
-          style={{
-            maskImage:
-              "linear-gradient(to bottom, black 0%, black 50%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, black 50%, transparent 100%)",
-          }}
-        >
-          <div className=" flex w-full justify-between items-center pt-2 border-b-orange-50 border-b-1 py-3">
-            <div className="text-3xl font-bold">AGROSKEN</div>
-            <div className="flex h-min gap-6">
-              <div>Services</div>
-              <div>About Us</div>
-              <div>Contact</div>
-            </div>
-          </div>
-        </div>
+        <Navbar />
         <div className="flex flex-col px-30 py-8 gap-4">
           <div className="text-6xl leading-18 max-w-3xl">
             Lorem ipsum dolor sit amet consectetur adipiscing.
@@ -64,4 +48,4 @@ const Services = () => {
       </div>
     </div>
   );
-}; 
+};
