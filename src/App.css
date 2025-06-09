@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+#root {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+@layer components {
+  .circle-icon {
+    @apply aspect-square rounded-full outline-2 h-full 
+    flex items-center justify-center hover:text-amber-300
+  hover:outline-amber-300 transition-all cursor-pointer;
+  }
+
+  .navbar {
+    @apply backdrop-blur-sm;
+  }
+}
