@@ -1,6 +1,6 @@
 import service1 from "../../assets/service_1.png";
 
-export const Landing = () => {
+export const LandingPage = () => {
   return (
     <div className="flex flex-col w-screen scroll-auto">
       <div className="flex h-screen w-screen bg-[url(/src/assets/landing_bg.png)] bg-cover bg-center items-end">
@@ -80,4 +80,4 @@ const Services = () => {
       </div>
     </div>
   );
-};
+}; 
