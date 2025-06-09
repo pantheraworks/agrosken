@@ -1,7 +1,12 @@
-import service1 from "../../assets/service_1.png";
+import { useState } from "react";
 import { ServiceCard } from "../ServiceCard/ServiceCard";
+import { services } from "../../data/services";
 
 export const Services = () => {
+  const [activeServiceId, setActiveServiceId] = useState(services[0].id);
+  
+  const activeService = services.find(service => service.id === activeServiceId) || services[0];
+
   return (
     <div className="min-w-screen min-h-screen bg-[#261501] flex flex-col items-center px-20 py-20 justify-between">
       <div className="py-7 gap-6 flex flex-col items-center text-center">
@@ -11,17 +16,23 @@ export const Services = () => {
         <div className="w-fit text-2xl">See what we offer:</div>
       </div>
       <ServiceCard
-        icon="A"
-        title="Lorem ipsum"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque erat vitae tincidunt varius. Donec commodo consequat mollis. Maecenas efficitur mi quis velit tristique ultricies. Nam blandit eros arcu, at dictum ligula eleifend id. Nullam semper sollicitudin massa nec dapibus. Sed rutrum vulputate commodo."
-        imageSrc={service1}
+        icon={activeService.icon}
+        title={activeService.title}
+        description={activeService.description}
+        imageSrc={activeService.imageSrc}
+        imageAlt={activeService.imageAlt}
       />
       <div className="flex h-25 w-full px-50 items-center justify-around text-3xl">
-        <div className="circle-icon">A</div>
-        <div className="circle-icon">B</div>
-        <div className="circle-icon">C</div>
-        <div className="circle-icon">D</div>
-        <div className="circle-icon">E</div>
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className="circle-icon"
+            data-active={activeServiceId === service.id}
+            onClick={() => setActiveServiceId(service.id)}
+          >
+            {service.icon}
+          </div>
+        ))}
       </div>
     </div>
   );
