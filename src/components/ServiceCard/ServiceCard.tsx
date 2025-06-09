@@ -8,12 +8,12 @@ interface ServiceCardProps {
   imageAlt?: string;
 }
 
-export const ServiceCard = ({ 
-  icon, 
-  title, 
-  description, 
-  imageSrc, 
-  imageAlt = "Service" 
+export const ServiceCard = ({
+  icon,
+  title,
+  description,
+  imageSrc,
+  imageAlt = "Service",
 }: ServiceCardProps) => {
   return (
     <div className="flex w-full gap-20 items-stretch px-30">

@@ -4,8 +4,9 @@ import { services } from "../../data/services";
 
 export const Services = () => {
   const [activeServiceId, setActiveServiceId] = useState(services[0].id);
-  
-  const activeService = services.find(service => service.id === activeServiceId) || services[0];
+
+  const activeService =
+    services.find((service) => service.id === activeServiceId) || services[0];
 
   return (
     <div className="min-w-screen min-h-screen bg-[#261501] flex flex-col items-center px-20 py-20 justify-between">
@@ -36,4 +37,4 @@ export const Services = () => {
       </div>
     </div>
   );
-}; 
+};
