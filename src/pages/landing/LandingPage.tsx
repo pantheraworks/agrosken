@@ -1,4 +1,5 @@
 import service1 from "../../assets/service_1.png";
+import { ServiceCard } from "../../components/ServiceCard/ServiceCard";
 
 export const LandingPage = () => {
   return (
@@ -48,29 +49,12 @@ const Services = () => {
         </div>
         <div className="w-fit text-2xl">See what we offer:</div>
       </div>
-      <div className="flex w-full gap-20 items-stretch px-30">
-        <div className="flex flex-col gap-8 flex-1">
-          <div className="flex h-10 gap-4 items-center">
-            <div className="circle-icon">A</div>
-            <div className="text-3xl font-bold">Lorem ipsum</div>
-          </div>
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            scelerisque erat vitae tincidunt varius. Donec commodo consequat
-            mollis. Maecenas efficitur mi quis velit tristique ultricies. Nam
-            blandit eros arcu, at dictum ligula eleifend id. Nullam semper
-            sollicitudin massa nec dapibus. Sed rutrum vulputate commodo.
-          </div>
-        </div>
-
-        <div className="relative">
-          <img
-            src={service1}
-            className="h-full w-auto rounded-3xl object-cover"
-            alt="Service"
-          />
-        </div>
-      </div>
+      <ServiceCard
+        icon="A"
+        title="Lorem ipsum"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque erat vitae tincidunt varius. Donec commodo consequat mollis. Maecenas efficitur mi quis velit tristique ultricies. Nam blandit eros arcu, at dictum ligula eleifend id. Nullam semper sollicitudin massa nec dapibus. Sed rutrum vulputate commodo."
+        imageSrc={service1}
+      />
       <div className="flex h-25 w-full px-50 items-center justify-around text-3xl">
         <div className="circle-icon">A</div>
         <div className="circle-icon">B</div>
