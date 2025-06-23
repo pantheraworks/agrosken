@@ -9,14 +9,6 @@ html {
   min-width: 100vw;
 }
 
-.scroll-snap-y-mandatory {
-  scroll-snap-type: y mandatory;
-}
-
-.scroll-snap-align-start {
-  scroll-snap-align: start;
-}
-
 @layer components {
   .circle-icon {
     @apply aspect-square rounded-full outline-2 h-full 

@@ -6,11 +6,11 @@ export const LandingPage = () => {
   return (
     <div>
       <Navbar />
-      <div className="h-screen overflow-y-scroll scroll-snap-y-mandatory">
-        <section className="h-screen scroll-snap-align-start">
+      <div className="h-screen overflow-y-scroll">
+        <section className="h-screen">
           <Hero />
         </section>
-        <section className="h-screen scroll-snap-align-start">
+        <section className="h-screen">
           <Services />
         </section>
       </div>
