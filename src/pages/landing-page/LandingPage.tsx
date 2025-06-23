@@ -4,10 +4,16 @@ import { Services } from "../../components/Services/Services";
 
 export const LandingPage = () => {
   return (
-    <div className="flex flex-col w-screen scroll-auto">
+    <div>
       <Navbar />
-      <Hero />
-      <Services />
+      <div className="h-screen overflow-y-scroll">
+        <section className="h-screen">
+          <Hero />
+        </section>
+        <section className="h-screen">
+          <Services />
+        </section>
+      </div>
     </div>
   );
 };

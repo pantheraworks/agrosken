@@ -1,7 +1,7 @@
 export const Navbar = () => {
   return (
     <div
-      className="fixed top-0 w-full px-30 navbar"
+      className="fixed top-0 w-full px-30 navbar z-50"
       style={{
         maskImage:
           "linear-gradient(to bottom, black 0%, black 50%, transparent 100%)",
