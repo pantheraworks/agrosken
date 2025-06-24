@@ -139,7 +139,7 @@ const Contact = () => {
               <div className="flex justify-end">
                 <motion.button
                   type="submit"
-                  className="bg-neutral-700 text-white px-8 py-3 rounded-full hover:bg-neutral-600 transition-colors"
+                  className="bg-white bg-opacity-25 text-white px-8 py-3 rounded-lg hover:bg-opacity-40 transition-all"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
