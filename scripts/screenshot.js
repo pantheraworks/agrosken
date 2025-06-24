@@ -137,16 +137,34 @@ async function takeScreenshot() {
       "screenshots",
       "contact-section.png"
     );
-    await page.screenshot({
-      path: contactScreenshotPath,
-      fullPage: false,
-      clip: {
-        x: 0,
-        y: 0,
-        width: 1280,
-        height: 800,
-      },
+
+    // Get the contact section dimensions to capture the full section
+    const contactSectionBounds = await page.evaluate(() => {
+      const contactSection = document.getElementById("contact-section");
+      if (contactSection) {
+        const rect = contactSection.getBoundingClientRect();
+        return {
+          x: rect.x,
+          y: rect.y,
+          width: rect.width,
+          height: rect.height,
+        };
+      }
+      return null;
     });
+
+    if (contactSectionBounds) {
+      await page.screenshot({
+        path: contactScreenshotPath,
+        clip: contactSectionBounds,
+      });
+    } else {
+      // Fallback to viewport screenshot
+      await page.screenshot({
+        path: contactScreenshotPath,
+        fullPage: false,
+      });
+    }
     console.log(
       `📸 Contact section screenshot saved to: screenshots/contact-section.png`
     );
