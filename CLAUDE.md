@@ -61,3 +61,11 @@ When making UI changes, ALWAYS:
    - `full-page.png` - Complete page view
 4. Verify visual changes match intended design
 5. Check for regressions in animations, colors, and layouts
+
+## Git Commit Guidelines
+
+When creating commits:
+- Write clear, concise commit messages
+- Include the "🤖 Generated with [Claude Code](https://claude.ai/code)" line in commit messages
+- **DO NOT** add "Co-Authored-By: Claude <noreply@anthropic.com>" to commits
+- The user prefers Claude not to be listed as a co-author
