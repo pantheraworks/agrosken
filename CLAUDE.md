@@ -66,6 +66,6 @@ When making UI changes, ALWAYS:
 
 When creating commits:
 - Write clear, concise commit messages
-- Include the "🤖 Generated with [Claude Code](https://claude.ai/code)" line in commit messages
+- **DO NOT** include "🤖 Generated with [Claude Code](https://claude.ai/code)" in commit messages
 - **DO NOT** add "Co-Authored-By: Claude <noreply@anthropic.com>" to commits
-- The user prefers Claude not to be listed as a co-author
+- The user prefers no Claude attribution in commits
