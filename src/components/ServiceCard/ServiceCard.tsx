@@ -1,7 +1,7 @@
-import { type ReactNode } from "react";
+import { type ComponentType } from "react";
 
 interface ServiceCardProps {
-  icon: ReactNode;
+  icon: ComponentType<{ className?: string }>;
   title: string;
   description: string;
   imageSrc: string;
@@ -9,7 +9,7 @@ interface ServiceCardProps {
 }
 
 export const ServiceCard = ({
-  icon,
+  icon: Icon,
   title,
   description,
   imageSrc,
@@ -19,7 +19,7 @@ export const ServiceCard = ({
     <div className="flex w-full gap-20 items-stretch px-30">
       <div className="flex flex-col gap-8 flex-1">
         <div className="flex h-10 gap-4 items-center">
-          <div className="circle-icon">{icon}</div>
+          <Icon className="h-10 w-10" />
           <div className="text-3xl font-bold">{title}</div>
         </div>
         <div>{description}</div>
