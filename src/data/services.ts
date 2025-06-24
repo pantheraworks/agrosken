@@ -1,11 +1,11 @@
 import { type ComponentType } from "react";
 import service1 from "../assets/service_1.png";
-import { 
+import {
   CameraIcon,
   BeakerIcon,
   BugAntIcon,
   CloudIcon,
-  ChartBarIcon 
+  ChartBarIcon,
 } from "@heroicons/react/24/solid";
 
 export interface Service {
