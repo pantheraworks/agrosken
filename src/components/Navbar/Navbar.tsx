@@ -25,6 +25,7 @@ export const Navbar = () => {
           href="#hero-section"
           onClick={(e) => handleNavClick(e, "hero-section")}
           className="text-3xl font-bold text-white hover:text-amber-500 transition-colors cursor-pointer"
+          style={{ color: "white" }}
         >
           AGROSKEN
         </a>
