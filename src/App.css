@@ -2,6 +2,8 @@
 
 :root {
   --color-primary-amber: #d9b504;
+  --color-footer-amber: #A69B03;
+  --color-footer-amber-dark: #8B8003;
 }
 
 html {
