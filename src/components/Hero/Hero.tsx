@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 export const Hero = () => {
   const title = "Lorem ipsum dolor sit amet consectetur adipiscing.";
 
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services-section');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="flex h-screen w-screen bg-[#261501] items-end relative z-10">
       <motion.div
@@ -28,7 +35,7 @@ export const Hero = () => {
           ))}
         </div>
         <motion.div
-          className="flex items-center h-8 gap-2"
+          className="flex items-center h-8 gap-2 cursor-pointer"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{
@@ -36,6 +43,7 @@ export const Hero = () => {
             duration: 0.8,
             ease: "easeOut",
           }}
+          onClick={scrollToServices}
         >
           <div className="bg-amber-300 h-full aspect-square rounded-full flex items-center justify-center font-bold">
             &gt;
