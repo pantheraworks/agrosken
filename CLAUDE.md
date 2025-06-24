@@ -47,3 +47,18 @@ The application follows a component-based architecture with:
 3. ESLint checks for code quality and React best practices
 4. Components should be organized by feature in the components directory
 5. Page-level components go in the pages directory
+
+## Visual Testing Workflow
+
+When making UI changes, ALWAYS:
+1. Ensure dev server is running (`npm run dev`)
+2. Run `npm run screenshot` to capture visual state
+3. Use the Read tool to examine screenshots in `/screenshots/`:
+   - `hero-section.png` - Hero section with Get Started button
+   - `hero-hover.png` - Button hover state
+   - `services-section.png` - Services display with icons
+   - `full-page.png` - Complete page view
+4. Verify visual changes match intended design
+5. Check for regressions in animations, colors, and layouts
+
+This automated visual testing helps ensure UI consistency and catch visual bugs early.
