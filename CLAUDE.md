@@ -51,6 +51,7 @@ The application follows a component-based architecture with:
 ## Visual Testing Workflow
 
 When making UI changes, ALWAYS:
+
 1. Ensure dev server is running (`npm run dev`)
 2. Run `npm run screenshot` to capture visual state
 3. Use the Read tool to examine screenshots in `/screenshots/`:
