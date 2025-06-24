@@ -22,11 +22,8 @@ export const Navbar = () => {
     >
       <div className=" flex w-full justify-between items-center pt-2 border-b-orange-50 border-b-1 py-3">
         <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          href="#hero-section"
+          onClick={(e) => handleNavClick(e, "hero-section")}
           className="text-3xl font-bold text-white hover:text-amber-500 transition-colors cursor-pointer"
         >
           AGROSKEN
