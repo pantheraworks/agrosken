@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --color-primary-amber: #D9B504;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -16,11 +20,11 @@ html {
   }
 
   .circle-icon:hover {
-    @apply text-amber-300 outline-amber-300 outline outline-2;
+    @apply text-[var(--color-primary-amber)] outline-[var(--color-primary-amber)] outline outline-2;
   }
 
   .circle-icon[data-active="true"] {
-    @apply text-amber-300 outline-amber-300 outline outline-2;
+    @apply text-[var(--color-primary-amber)] outline-[var(--color-primary-amber)] outline outline-2;
   }
 
   .navbar {

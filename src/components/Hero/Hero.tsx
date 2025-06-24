@@ -4,9 +4,9 @@ export const Hero = () => {
   const title = "Lorem ipsum dolor sit amet consectetur adipiscing.";
 
   const scrollToServices = () => {
-    const servicesSection = document.getElementById('services-section');
+    const servicesSection = document.getElementById("services-section");
     if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: 'smooth' });
+      servicesSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -35,7 +35,7 @@ export const Hero = () => {
           ))}
         </div>
         <motion.div
-          className="flex items-center justify-between h-8 min-w-[150px] gap-2 cursor-pointer group relative overflow-hidden rounded-full transition-all duration-300 hover:bg-amber-300 hover:px-3"
+          className="inline-flex items-center h-8 gap-2 cursor-pointer group relative w-fit"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{
@@ -45,10 +45,13 @@ export const Hero = () => {
           }}
           onClick={scrollToServices}
         >
-          <div className="bg-amber-300 h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 absolute left-0 group-hover:left-[calc(100%-2rem)] group-hover:bg-transparent z-10">
+          <div className="absolute inset-0 -left-2 -right-2 bg-[var(--color-primary-amber)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="relative bg-[var(--color-primary-amber)] h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 group-hover:translate-x-[120px] group-hover:bg-transparent z-10">
             &gt;
           </div>
-          <div className="text-lg font-bold transition-all duration-500 pl-10 group-hover:pl-3 group-hover:text-black">Get Started</div>
+          <div className="relative text-lg font-bold transition-all duration-500 group-hover:-translate-x-8 z-10">
+            Get Started
+          </div>
         </motion.div>
       </div>
     </div>
