@@ -12,7 +12,10 @@ export const Hero = () => {
   };
 
   return (
-    <div className="flex h-screen w-screen bg-[#261501] items-end relative z-10">
+    <div
+      id="hero-section"
+      className="flex h-screen w-screen bg-[#261501] items-end relative z-10"
+    >
       <motion.div
         className="absolute inset-0 bg-[url(/src/assets/landing_bg.png)] bg-cover bg-center"
         initial={{ opacity: 0 }}

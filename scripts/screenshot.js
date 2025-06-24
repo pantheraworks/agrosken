@@ -87,9 +87,13 @@ async function takeScreenshot() {
 
     // Scroll to services section
     await page.evaluate(() => {
-      document
-        .getElementById("services-section")
-        ?.scrollIntoView({ behavior: "smooth" });
+      const scrollContainer = document.querySelector(
+        ".h-screen.overflow-y-scroll"
+      );
+      const servicesSection = document.getElementById("services-section");
+      if (scrollContainer && servicesSection) {
+        servicesSection.scrollIntoView({ behavior: "smooth" });
+      }
     });
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -110,6 +114,59 @@ async function takeScreenshot() {
     });
     console.log(
       `📸 Services section screenshot saved to: screenshots/services-section.png`
+    );
+
+    // Scroll to contact section
+    await page.evaluate(() => {
+      const scrollContainer = document.querySelector(
+        ".h-screen.overflow-y-scroll"
+      );
+      const contactSection = document.getElementById("contact-section");
+      if (scrollContainer && contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      } else if (scrollContainer) {
+        // If section not found, scroll to bottom of container
+        scrollContainer.scrollTo(0, scrollContainer.scrollHeight);
+      }
+    });
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    const contactScreenshotPath = join(
+      __dirname,
+      "..",
+      "screenshots",
+      "contact-section.png"
+    );
+
+    // Get the contact section dimensions to capture the full section
+    const contactSectionBounds = await page.evaluate(() => {
+      const contactSection = document.getElementById("contact-section");
+      if (contactSection) {
+        const rect = contactSection.getBoundingClientRect();
+        return {
+          x: rect.x,
+          y: rect.y,
+          width: rect.width,
+          height: rect.height,
+        };
+      }
+      return null;
+    });
+
+    if (contactSectionBounds) {
+      await page.screenshot({
+        path: contactScreenshotPath,
+        clip: contactSectionBounds,
+      });
+    } else {
+      // Fallback to viewport screenshot
+      await page.screenshot({
+        path: contactScreenshotPath,
+        fullPage: false,
+      });
+    }
+    console.log(
+      `📸 Contact section screenshot saved to: screenshots/contact-section.png`
     );
   } catch (error) {
     console.error("Error taking screenshot:", error);

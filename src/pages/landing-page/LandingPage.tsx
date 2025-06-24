@@ -1,6 +1,7 @@
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Hero } from "../../components/Hero/Hero";
 import { Services } from "../../components/Services/Services";
+import ContactWithFooter from "./ContactWithFooter";
 
 export const LandingPage = () => {
   return (
@@ -13,6 +14,7 @@ export const LandingPage = () => {
         <section id="services-section" className="h-screen">
           <Services />
         </section>
+        <ContactWithFooter />
       </div>
     </div>
   );
