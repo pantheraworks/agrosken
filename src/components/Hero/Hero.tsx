@@ -45,10 +45,30 @@ export const Hero = () => {
           }}
           onClick={scrollToServices}
         >
-          <div className="bg-amber-300 h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 absolute left-0 group-hover:left-[calc(100%-2rem)] group-hover:bg-transparent z-10">
+          <motion.div 
+            className="bg-amber-300 h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 absolute left-0 group-hover:left-[calc(100%-2rem)] group-hover:bg-transparent z-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 2.0,
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+          >
             &gt;
-          </div>
-          <div className="text-lg font-bold transition-all duration-500 pl-10 group-hover:pl-3 group-hover:text-black">Get Started</div>
+          </motion.div>
+          <motion.div 
+            className="text-lg font-bold transition-all duration-500 pl-10 group-hover:pl-3 group-hover:text-black"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 2.0,
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+          >
+            Get Started
+          </motion.div>
         </motion.div>
       </div>
     </div>
