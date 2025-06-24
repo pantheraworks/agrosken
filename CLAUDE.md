@@ -61,3 +61,18 @@ When making UI changes, ALWAYS:
    - `full-page.png` - Complete page view
 4. Verify visual changes match intended design
 5. Check for regressions in animations, colors, and layouts
+
+## Git Workflow Guidelines
+
+When working with git in this repository:
+
+1. **Always start from main**: Before creating a new feature branch, ALWAYS:
+   - `git checkout main`
+   - `git pull` to get the latest changes
+   - Then create your new branch: `git checkout -b feature-branch-name`
+
+2. **No Claude attribution in commits**: When committing changes:
+   - Write commit messages that focus on what changed, not who made the changes
+   - Do NOT include "Generated with Claude Code" or similar attributions
+   - Do NOT add Co-Authored-By lines for Claude
+   - Keep commit messages professional and focused on the code changes
