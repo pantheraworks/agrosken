@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 
 export const Hero = () => {
   const title = "Lorem ipsum dolor sit amet consectetur adipiscing.";
@@ -47,7 +48,7 @@ export const Hero = () => {
         >
           <div className="absolute inset-0 -left-2 -right-2 bg-[var(--color-primary-amber)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div className="relative bg-[var(--color-primary-amber)] h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 group-hover:translate-x-[110px] group-hover:bg-transparent z-10">
-            &gt;
+            <ChevronRightIcon className="h-5 w-5" />
           </div>
           <div className="relative text-lg font-bold transition-all duration-500 group-hover:-translate-x-8 z-10">
             Get Started

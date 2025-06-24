@@ -24,16 +24,19 @@ export const Services = () => {
         imageAlt={activeService.imageAlt}
       />
       <div className="flex h-25 w-full px-50 items-center justify-around text-3xl">
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className="circle-icon"
-            data-active={activeServiceId === service.id}
-            onClick={() => setActiveServiceId(service.id)}
-          >
-            {service.icon}
-          </div>
-        ))}
+        {services.map((service) => {
+          const Icon = service.icon;
+          return (
+            <div
+              key={service.id}
+              className="circle-icon"
+              data-active={activeServiceId === service.id}
+              onClick={() => setActiveServiceId(service.id)}
+            >
+              <Icon className="h-12 w-12" />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
