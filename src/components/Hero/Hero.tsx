@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 export const Hero = () => {
   const title = "Lorem ipsum dolor sit amet consectetur adipiscing.";
 
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById("services-section");
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="flex h-screen w-screen bg-[#261501] items-end relative z-10">
       <motion.div
@@ -28,7 +35,7 @@ export const Hero = () => {
           ))}
         </div>
         <motion.div
-          className="flex items-center h-8 gap-2"
+          className="inline-flex items-center h-8 gap-2 cursor-pointer group relative w-fit"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{
@@ -36,11 +43,15 @@ export const Hero = () => {
             duration: 0.8,
             ease: "easeOut",
           }}
+          onClick={scrollToServices}
         >
-          <div className="bg-amber-300 h-full aspect-square rounded-full flex items-center justify-center font-bold">
+          <div className="absolute inset-0 -left-2 -right-2 bg-[var(--color-primary-amber)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="relative bg-[var(--color-primary-amber)] h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 group-hover:translate-x-[110px] group-hover:bg-transparent z-10">
             &gt;
           </div>
-          <div className="text-lg font-bold">Get Started</div>
+          <div className="relative text-lg font-bold transition-all duration-500 group-hover:-translate-x-8 z-10">
+            Get Started
+          </div>
         </motion.div>
       </div>
     </div>
