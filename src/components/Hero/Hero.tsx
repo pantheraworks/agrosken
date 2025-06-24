@@ -35,7 +35,7 @@ export const Hero = () => {
           ))}
         </div>
         <motion.div
-          className="flex items-center h-8 gap-2 cursor-pointer"
+          className="flex items-center justify-between h-8 min-w-[150px] gap-2 cursor-pointer group relative overflow-hidden rounded-full transition-all duration-300 hover:bg-amber-300 hover:px-3"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{
@@ -45,10 +45,10 @@ export const Hero = () => {
           }}
           onClick={scrollToServices}
         >
-          <div className="bg-amber-300 h-full aspect-square rounded-full flex items-center justify-center font-bold">
+          <div className="bg-amber-300 h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 absolute left-0 group-hover:left-[calc(100%-2rem)] group-hover:bg-transparent z-10">
             &gt;
           </div>
-          <div className="text-lg font-bold">Get Started</div>
+          <div className="text-lg font-bold transition-all duration-500 pl-10 group-hover:pl-3 group-hover:text-black">Get Started</div>
         </motion.div>
       </div>
     </div>
