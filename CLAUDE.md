@@ -76,3 +76,10 @@ When working with git in this repository:
    - Do NOT include "Generated with Claude Code" or similar attributions
    - Do NOT add Co-Authored-By lines for Claude
    - Keep commit messages professional and focused on the code changes
+
+## Reference Files
+
+When working with design references or mockups:
+- Upload all reference images to the `references/` directory
+- This directory is gitignored to keep the repository clean
+- Reference files should be used for implementation guidance but not committed to the repository
