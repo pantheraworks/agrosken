@@ -87,7 +87,9 @@ async function takeScreenshot() {
 
     // Scroll to services section
     await page.evaluate(() => {
-      const scrollContainer = document.querySelector('.h-screen.overflow-y-scroll');
+      const scrollContainer = document.querySelector(
+        ".h-screen.overflow-y-scroll"
+      );
       const servicesSection = document.getElementById("services-section");
       if (scrollContainer && servicesSection) {
         servicesSection.scrollIntoView({ behavior: "smooth" });
@@ -116,7 +118,9 @@ async function takeScreenshot() {
 
     // Scroll to contact section
     await page.evaluate(() => {
-      const scrollContainer = document.querySelector('.h-screen.overflow-y-scroll');
+      const scrollContainer = document.querySelector(
+        ".h-screen.overflow-y-scroll"
+      );
       const contactSection = document.getElementById("contact-section");
       if (scrollContainer && contactSection) {
         contactSection.scrollIntoView({ behavior: "smooth" });

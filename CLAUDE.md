@@ -67,11 +67,14 @@ When making UI changes, ALWAYS:
 When working with git in this repository:
 
 1. **Always start from main**: Before creating a new feature branch, ALWAYS:
+
    - `git checkout main`
    - `git pull` to get the latest changes
    - Then create your new branch: `git checkout -b feature-branch-name`
 
-2. **No Claude attribution in commits**: When committing changes:
+2. **Format code before committing**: ALWAYS run `npm run format` before committing changes to ensure consistent code style
+
+3. **No Claude attribution in commits**: When committing changes:
    - Write commit messages that focus on what changed, not who made the changes
    - Do NOT include "Generated with Claude Code" or similar attributions
    - Do NOT add Co-Authored-By lines for Claude
@@ -80,6 +83,7 @@ When working with git in this repository:
 ## Reference Files
 
 When working with design references or mockups:
+
 - Upload all reference images to the `references/` directory
 - This directory is gitignored to keep the repository clean
 - Reference files should be used for implementation guidance but not committed to the repository

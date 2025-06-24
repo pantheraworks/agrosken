@@ -12,9 +12,27 @@ export const Navbar = () => {
       <div className=" flex w-full justify-between items-center pt-2 border-b-orange-50 border-b-1 py-3">
         <div className="text-3xl font-bold text-white">AGROSKEN</div>
         <div className="flex h-min gap-6">
-          <a href="#services-section" className="text-white hover:text-amber-500 transition-colors" style={{ color: 'white' }}>Services</a>
-          <a href="#about" className="text-white hover:text-amber-500 transition-colors" style={{ color: 'white' }}>About Us</a>
-          <a href="#contact-section" className="text-white hover:text-amber-500 transition-colors" style={{ color: 'white' }}>Contact</a>
+          <a
+            href="#services-section"
+            className="text-white hover:text-amber-500 transition-colors"
+            style={{ color: "white" }}
+          >
+            Services
+          </a>
+          <a
+            href="#about"
+            className="text-white hover:text-amber-500 transition-colors"
+            style={{ color: "white" }}
+          >
+            About Us
+          </a>
+          <a
+            href="#contact-section"
+            className="text-white hover:text-amber-500 transition-colors"
+            style={{ color: "white" }}
+          >
+            Contact
+          </a>
         </div>
       </div>
     </div>

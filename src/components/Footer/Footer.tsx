@@ -26,48 +26,47 @@ const Footer = () => {
           <div className="flex-shrink-0">
             <h2 className="text-2xl font-bold">AGROSKEN</h2>
           </div>
-          
+
           {/* Links Sections */}
           <div className="flex gap-12">
+            {/* Company Section */}
+            <div>
+              <h3 className="text-base font-semibold mb-2">Company</h3>
+              <ul className="space-y-1 text-sm">
+                {companyLinks.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-white hover:text-amber-200 transition-colors"
+                      style={{ color: "white" }}
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Company Section */}
-          <div>
-            <h3 className="text-base font-semibold mb-2">Company</h3>
-            <ul className="space-y-1 text-sm">
-              {companyLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-white hover:text-amber-200 transition-colors"
-                    style={{ color: 'white' }}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources Section */}
-          <div>
-            <h3 className="text-base font-semibold mb-2">Resources</h3>
-            <ul className="space-y-1 text-sm">
-              {resourcesLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-white hover:text-amber-200 transition-colors"
-                    style={{ color: 'white' }}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Resources Section */}
+            <div>
+              <h3 className="text-base font-semibold mb-2">Resources</h3>
+              <ul className="space-y-1 text-sm">
+                {resourcesLinks.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-white hover:text-amber-200 transition-colors"
+                      style={{ color: "white" }}
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-        
+
         {/* Copyright */}
         <div className="mt-6 pt-4 border-t border-[var(--color-footer-amber-dark)] text-center text-sm">
           <p>© {new Date().getFullYear()} Agrosken. All rights reserved.</p>

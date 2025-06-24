@@ -49,7 +49,7 @@ const Contact = () => {
                 <a
                   href="tel:+12345678"
                   className="text-lg text-white hover:text-amber-500 transition-colors"
-                  style={{ color: 'white' }}
+                  style={{ color: "white" }}
                 >
                   +1 2 3456 789
                 </a>
@@ -59,14 +59,16 @@ const Contact = () => {
                 <a
                   href="mailto:info@agrosken.com"
                   className="text-lg text-white hover:text-amber-500 transition-colors"
-                  style={{ color: 'white' }}
+                  style={{ color: "white" }}
                 >
                   info@agrosken.com
                 </a>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPinIcon className="h-6 w-6" />
-                <span className="text-lg text-white">1234 Lorem Ipsum, Dolor Sit.</span>
+                <span className="text-lg text-white">
+                  1234 Lorem Ipsum, Dolor Sit.
+                </span>
               </div>
             </div>
           </motion.div>
@@ -80,7 +82,9 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-sm text-gray-400 block mb-1">Name</label>
+                  <label className="text-sm text-gray-400 block mb-1">
+                    Name
+                  </label>
                   <input
                     type="text"
                     name="name"
@@ -91,7 +95,9 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-gray-400 block mb-1">Email</label>
+                  <label className="text-sm text-gray-400 block mb-1">
+                    Email
+                  </label>
                   <input
                     type="email"
                     name="email"
@@ -104,7 +110,9 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="text-sm text-gray-400 block mb-1">Phone</label>
+                <label className="text-sm text-gray-400 block mb-1">
+                  Phone
+                </label>
                 <input
                   type="tel"
                   name="phone"
@@ -115,7 +123,9 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="text-sm text-gray-400 block mb-1">Tell us about your interest</label>
+                <label className="text-sm text-gray-400 block mb-1">
+                  Tell us about your interest
+                </label>
                 <textarea
                   name="message"
                   value={formData.message}
