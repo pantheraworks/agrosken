@@ -46,7 +46,7 @@ export const Hero = () => {
           onClick={scrollToServices}
         >
           <div className="absolute inset-0 -left-2 -right-2 bg-[var(--color-primary-amber)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div className="relative bg-[var(--color-primary-amber)] h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 group-hover:translate-x-[120px] group-hover:bg-transparent z-10">
+          <div className="relative bg-[var(--color-primary-amber)] h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 group-hover:translate-x-[110px] group-hover:bg-transparent z-10">
             &gt;
           </div>
           <div className="relative text-lg font-bold transition-all duration-500 group-hover:-translate-x-8 z-10">
