@@ -168,6 +168,27 @@ async function takeScreenshot() {
     console.log(
       `📸 Contact section screenshot saved to: screenshots/contact-section.png`
     );
+
+    // Navigate to privacy policy page
+    await page.goto("http://localhost:5173/privacy-policy", {
+      waitUntil: "networkidle0",
+      timeout: 30000,
+    });
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    const privacyPolicyScreenshotPath = join(
+      __dirname,
+      "..",
+      "screenshots",
+      "privacy-policy.png"
+    );
+    await page.screenshot({
+      path: privacyPolicyScreenshotPath,
+      fullPage: true,
+    });
+    console.log(
+      `📸 Privacy policy page screenshot saved to: screenshots/privacy-policy.png`
+    );
   } catch (error) {
     console.error("Error taking screenshot:", error);
   } finally {

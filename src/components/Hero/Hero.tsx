@@ -14,7 +14,7 @@ export const Hero = () => {
   return (
     <div
       id="hero-section"
-      className="flex h-screen w-screen bg-[#261501] items-end relative z-10"
+      className="flex h-screen w-screen bg-[var(--color-bg-primary)] items-end relative z-10"
     >
       <motion.div
         className="absolute inset-0 bg-[url(/src/assets/landing_bg.png)] bg-cover bg-center"
