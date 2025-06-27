@@ -2,6 +2,32 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+# ⚠️ STOP! Before doing ANYTHING:
+
+# Did you run: git checkout main && git pull?
+
+# Did you create a feature branch?
+
+# Did you create a todo list with TodoWrite?
+
+## REQUIRED WORKFLOW FOR ANY TASK
+
+**ALWAYS execute these steps before starting ANY coding task:**
+
+1. ✓ `git checkout main`
+2. ✓ `git pull`
+3. ✓ `git checkout -b descriptive-feature-branch-name`
+4. ✓ Create/update todo list with TodoWrite tool
+5. ✓ Work through tasks marking them as in_progress/completed
+
+**NO EXCEPTIONS - This workflow is MANDATORY for:**
+
+- Adding new features
+- Fixing bugs
+- Refactoring code
+- Installing packages
+- Making any changes to the codebase
+
 ## Project Overview
 
 Agrosken is a React + TypeScript + Vite application focused on agricultural technology services. It uses Tailwind CSS v4 for styling and Framer Motion for animations.
