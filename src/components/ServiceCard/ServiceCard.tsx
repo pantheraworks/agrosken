@@ -4,12 +4,8 @@ interface ServiceCardProps {
   service: Service;
 }
 
-export const ServiceCard = ({ service: {
-  icon: Icon,
-  title,
-  description,
-  imageSrc,
-  imageAlt = "Service" },
+export const ServiceCard = ({
+  service: { icon: Icon, title, description, imageSrc, imageAlt = "Service" },
 }: ServiceCardProps) => {
   return (
     <div className="flex flex-col sm:flex-row w-full gap-6 sm:gap-20 items-stretch sm:px-32 px-4">

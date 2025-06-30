@@ -16,9 +16,7 @@ export const Services = () => {
         </div>
         <div className="w-fit text-2xl">See what we offer:</div>
       </div>
-      <ServiceCard
-        service={activeService}
-      />
+      <ServiceCard service={activeService} />
       <div className="flex h-14 w-full max-w-screen gap-4 px-4 sm:px-50 items-center justify-around text-3xl">
         {services.map((service) => {
           const Icon = service.icon;
