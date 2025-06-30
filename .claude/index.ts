@@ -1,5 +1,6 @@
 import { Command, CommandContext, SlashCommandRegistry } from "./types";
 import { componentCommand } from "./commands/component";
+import { refactorCommand } from "./commands/refactor";
 
 class CommandRegistry implements SlashCommandRegistry {
   commands: Map<string, Command> = new Map();
@@ -55,6 +56,7 @@ class CommandRegistry implements SlashCommandRegistry {
 // Initialize registry and register commands
 export const commandRegistry = new CommandRegistry();
 commandRegistry.register(componentCommand);
+commandRegistry.register(refactorCommand);
 
 // Export for Claude to use
 export { Command, CommandContext } from "./types";
