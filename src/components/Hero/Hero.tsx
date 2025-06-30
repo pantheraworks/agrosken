@@ -22,7 +22,7 @@ export const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       />
-      <div className="flex flex-col px-30 py-8 gap-4 relative z-10">
+      <div className="flex flex-col px-4 sm:px-30 py-8 gap-4 relative z-10">
         <div className="text-6xl leading-18 max-w-3xl">
           {title.split("").map((char, index) => (
             <motion.span
