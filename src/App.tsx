@@ -1,19 +1,21 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import { LandingPage } from "./pages/landing-page/LandingPage";
 import PrivacyPolicyPage from "./pages/privacy-policy/PrivacyPolicyPage";
 import StagingPage from "./pages/staging/StagingPage";
+import { ScrollToHash } from "./components/ScrollToHash";
 
 function App() {
-  const pathname = window.location.pathname;
-
-  switch (pathname) {
-    case "/stage":
-      return <StagingPage />;
-    case "/privacy-policy":
-      return <PrivacyPolicyPage />;
-    default:
-      return <LandingPage />;
-  }
+  return (
+    <>
+      <ScrollToHash />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/stage" element={<StagingPage />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
