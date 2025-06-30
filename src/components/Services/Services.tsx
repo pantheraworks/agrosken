@@ -9,15 +9,21 @@ export const Services = () => {
     services.find((service) => service.id === activeServiceId) || services[0];
 
   return (
-    <div className="w-screen min-h-screen bg-[#261501] flex flex-col items-center px-4 sm:px-20 py-20 justify-between gap-6">
+    <div className="w-screen h-screen bg-[#261501] flex flex-col items-center px-20 py-20 justify-between">
       <div className="py-7 gap-6 flex flex-col items-center text-center">
         <div className="text-5xl font-bold">
           Smart Solutions for Smarter Farming
         </div>
         <div className="w-fit text-2xl">See what we offer:</div>
       </div>
-      <ServiceCard service={activeService} />
-      <div className="flex h-14 w-full max-w-screen gap-4 px-4 sm:px-50 items-center justify-around text-3xl">
+      <ServiceCard
+        icon={activeService.icon}
+        title={activeService.title}
+        description={activeService.description}
+        imageSrc={activeService.imageSrc}
+        imageAlt={activeService.imageAlt}
+      />
+      <div className="flex h-25 w-full px-50 items-center justify-around text-3xl">
         {services.map((service) => {
           const Icon = service.icon;
           return (
