@@ -43,7 +43,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[var(--color-footer-amber)] text-white py-6 px-6 max-w-screen">
+    <footer className="bg-[var(--color-footer-amber)] text-white py-6 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between">
           {/* Logo Section */}
