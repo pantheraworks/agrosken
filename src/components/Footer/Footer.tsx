@@ -16,7 +16,7 @@ const Footer = () => {
   const resourcesLinks = [
     { name: "Blog", href: "#blog" },
     { name: "Support", href: "#support" },
-    { name: "FAQ", href: "#faq" },
+    { name: "FAQ", href: "/faq" },
   ];
 
   return (

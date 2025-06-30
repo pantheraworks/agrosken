@@ -86,7 +86,7 @@ const FAQ = () => {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex justify-between items-center py-4 text-left !bg-transparent hover:!bg-white/5 transition-colors !border-none !rounded-none !p-0 !py-4"
+                  className="w-full flex justify-between items-center py-3 text-left !bg-transparent hover:!bg-white/5 transition-colors !border-none !rounded-none !p-0 !py-3"
                 >
                   <span className="text-white">{item.question}</span>
                   <span className="text-white text-2xl flex-shrink-0 ml-4">
