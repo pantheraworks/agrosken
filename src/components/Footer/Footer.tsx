@@ -1,34 +1,12 @@
-import { motion } from "framer-motion";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { NavLink } from "../NavLink";
 
 const Footer = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const isHomePage = location.pathname === "/";
-
-  const handleHashLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
-    e.preventDefault();
-    if (isHomePage) {
-      // If we're on the home page, just scroll to the section
-      const id = href.replace("#", "");
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      // If we're on another page, navigate to home with the hash
-      navigate("/" + href);
-    }
-  };
-
-  const socialLinks = [
-    { name: "X", href: "#", icon: "𝕏" },
-    { name: "YouTube", href: "#", icon: "▶" },
-    { name: "LinkedIn", href: "#", icon: "in" },
-  ];
+  // TODO: Implement social links section
+  // const socialLinks = [
+  //   { name: "X", href: "#", icon: "𝕏" },
+  //   { name: "YouTube", href: "#", icon: "▶" },
+  //   { name: "LinkedIn", href: "#", icon: "in" },
+  // ];
 
   const companyLinks = [
     { name: "About Us", href: "#about" },
@@ -59,24 +37,9 @@ const Footer = () => {
               <ul className="space-y-1 text-sm">
                 {companyLinks.map((link) => (
                   <li key={link.name}>
-                    {link.href.startsWith("/") ? (
-                      <Link
-                        to={link.href}
-                        className="text-white hover:text-amber-200 transition-colors"
-                        style={{ color: "white" }}
-                      >
-                        {link.name}
-                      </Link>
-                    ) : (
-                      <a
-                        href={link.href}
-                        onClick={(e) => handleHashLinkClick(e, link.href)}
-                        className="text-white hover:text-amber-200 transition-colors cursor-pointer"
-                        style={{ color: "white" }}
-                      >
-                        {link.name}
-                      </a>
-                    )}
+                    <NavLink href={link.href} className="hover:text-amber-200">
+                      {link.name}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
@@ -88,24 +51,9 @@ const Footer = () => {
               <ul className="space-y-1 text-sm">
                 {resourcesLinks.map((link) => (
                   <li key={link.name}>
-                    {link.href.startsWith("/") ? (
-                      <Link
-                        to={link.href}
-                        className="text-white hover:text-amber-200 transition-colors"
-                        style={{ color: "white" }}
-                      >
-                        {link.name}
-                      </Link>
-                    ) : (
-                      <a
-                        href={link.href}
-                        onClick={(e) => handleHashLinkClick(e, link.href)}
-                        className="text-white hover:text-amber-200 transition-colors cursor-pointer"
-                        style={{ color: "white" }}
-                      >
-                        {link.name}
-                      </a>
-                    )}
+                    <NavLink href={link.href} className="hover:text-amber-200">
+                      {link.name}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
