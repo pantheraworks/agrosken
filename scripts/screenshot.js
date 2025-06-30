@@ -189,6 +189,20 @@ async function takeScreenshot() {
     console.log(
       `📸 Privacy policy page screenshot saved to: screenshots/privacy-policy.png`
     );
+
+    // Navigate to FAQ page
+    await page.goto("http://localhost:5173/faq", {
+      waitUntil: "networkidle0",
+      timeout: 30000,
+    });
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    const faqScreenshotPath = join(__dirname, "..", "screenshots", "faq.png");
+    await page.screenshot({
+      path: faqScreenshotPath,
+      fullPage: true,
+    });
+    console.log(`📸 FAQ page screenshot saved to: screenshots/faq.png`);
   } catch (error) {
     console.error("Error taking screenshot:", error);
   } finally {

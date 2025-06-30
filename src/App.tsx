@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { LandingPage } from "./pages/landing-page/LandingPage";
 import PrivacyPolicyPage from "./pages/privacy-policy/PrivacyPolicyPage";
 import StagingPage from "./pages/staging/StagingPage";
+import FAQPage from "./pages/faq/FAQPage";
 import { ScrollToHash } from "./components/ScrollToHash";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/faq" element={<FAQPage />} />
         <Route path="/stage" element={<StagingPage />} />
       </Routes>
     </>

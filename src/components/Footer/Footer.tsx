@@ -39,7 +39,7 @@ const Footer = () => {
   const resourcesLinks = [
     { name: "Blog", href: "#blog" },
     { name: "Support", href: "#support" },
-    { name: "FAQ", href: "#faq" },
+    { name: "FAQ", href: "/faq" },
   ];
 
   return (
@@ -88,13 +88,24 @@ const Footer = () => {
               <ul className="space-y-1 text-sm">
                 {resourcesLinks.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-white hover:text-amber-200 transition-colors"
-                      style={{ color: "white" }}
-                    >
-                      {link.name}
-                    </a>
+                    {link.href.startsWith("/") ? (
+                      <Link
+                        to={link.href}
+                        className="text-white hover:text-amber-200 transition-colors"
+                        style={{ color: "white" }}
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        onClick={(e) => handleHashLinkClick(e, link.href)}
+                        className="text-white hover:text-amber-200 transition-colors cursor-pointer"
+                        style={{ color: "white" }}
+                      >
+                        {link.name}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

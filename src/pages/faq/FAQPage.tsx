@@ -2,7 +2,7 @@ import { FAQ } from "../../components/FAQ";
 import { Navbar } from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
-const StagingPage = () => {
+const FAQPage = () => {
   return (
     <>
       <Navbar />
@@ -12,4 +12,4 @@ const StagingPage = () => {
   );
 };
 
-export default StagingPage;
+export default FAQPage;
