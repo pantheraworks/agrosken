@@ -1,9 +1,12 @@
+import { config } from 'dotenv';
 import { execSync } from 'child_process';
 import { readFileSync, statSync, readdirSync } from 'fs';
 import { join, relative, posix } from 'path';
 import { Client } from 'basic-ftp';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+
+config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
