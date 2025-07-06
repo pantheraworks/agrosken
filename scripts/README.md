@@ -6,9 +6,9 @@ This directory contains utility scripts for the Agrosken application.
 
 ### 1. Deploy Script (`deploy.js`)
 
-The `deploy.js` script builds the application and deploys it to your FTP server. It works for both local/manual deployment and CI/CD environments.
+The `deploy.js` script builds the application and deploys it to your FTP server. It works identically for both local and CI environments.
 
-#### Local Setup
+#### Setup
 
 1. Install dependencies (already done):
    ```bash
@@ -33,29 +33,22 @@ The `deploy.js` script builds the application and deploys it to your FTP server.
 - `FTP_PASSWORD`: Your FTP password
 - `FTP_SECURE`: Set to `true` for FTPS (secure FTP)
 - `FTP_REMOTE_PATH`: Remote directory path where files will be uploaded
-- `SKIP_BUILD`: Set to `true` to skip the build step (useful in CI)
 
 #### Usage
 
-**Local deployment:**
 ```bash
 npm run deploy
 ```
 
-**CI deployment (skip build):**
-```bash
-SKIP_BUILD=true node scripts/deploy.js
-```
-
 The script will:
-1. Build the application using `npm run build` (unless `SKIP_BUILD=true`)
+1. Build the application using `npm run build`
 2. Connect to your FTP server
 3. Upload all files from the `dist` directory to the remote path
 4. Display progress and completion status
 
 ### 2. GitHub Actions Deployment
 
-Automatic deployment is configured via GitHub Actions in `.github/workflows/deploy.yml`. It triggers on every push to the `main` branch.
+Automatic deployment is configured via GitHub Actions in `.github/workflows/deploy.yml`. It triggers on every push to the `main` branch and uses the same `deploy.js` script.
 
 #### Setup GitHub Secrets
 
@@ -71,8 +64,8 @@ In your GitHub repository, go to Settings > Secrets and variables > Actions, and
 #### How it works
 
 1. **Trigger**: Pushes to `main` branch
-2. **Build**: Installs dependencies and builds the application
-3. **Deploy**: Runs the same `deploy.js` script with `SKIP_BUILD=true`
+2. **Install**: Installs dependencies with `npm ci`
+3. **Deploy**: Runs `npm run deploy` (builds and deploys)
 4. **Status**: Check the Actions tab for deployment status
 
 ### 3. Screenshot Script (`screenshot.js`)

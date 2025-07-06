@@ -21,10 +21,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Build application
-      run: npm run build
-      
-    - name: Deploy to FTP
+    - name: Build and Deploy
       env:
         FTP_HOST: ${{ secrets.FTP_HOST }}
         FTP_PORT: ${{ secrets.FTP_PORT }}
@@ -32,5 +29,4 @@ jobs:
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         FTP_SECURE: ${{ secrets.FTP_SECURE }}
         FTP_REMOTE_PATH: ${{ secrets.FTP_REMOTE_PATH }}
-        SKIP_BUILD: true
-      run: node scripts/deploy.js
+      run: npm run deploy
