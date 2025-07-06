@@ -6,13 +6,13 @@ This directory contains utility scripts for the Agrosken application.
 
 ### 1. Deploy Script (`deploy.js`)
 
-The `deploy.js` script builds the application and deploys it to your FTP server.
+The `deploy.js` script builds the application and deploys it to your FTP server. It works for both local/manual deployment and CI/CD environments.
 
-#### Setup
+#### Local Setup
 
 1. Install dependencies (already done):
    ```bash
-   npm install basic-ftp
+   npm install basic-ftp dotenv
    ```
 
 2. Create a `.env` file in the project root with your FTP configuration:
@@ -33,21 +33,49 @@ The `deploy.js` script builds the application and deploys it to your FTP server.
 - `FTP_PASSWORD`: Your FTP password
 - `FTP_SECURE`: Set to `true` for FTPS (secure FTP)
 - `FTP_REMOTE_PATH`: Remote directory path where files will be uploaded
+- `SKIP_BUILD`: Set to `true` to skip the build step (useful in CI)
 
 #### Usage
 
-Run the deployment script:
+**Local deployment:**
 ```bash
 npm run deploy
 ```
 
-This will:
-1. Build the application using `npm run build`
+**CI deployment (skip build):**
+```bash
+SKIP_BUILD=true node scripts/deploy.js
+```
+
+The script will:
+1. Build the application using `npm run build` (unless `SKIP_BUILD=true`)
 2. Connect to your FTP server
 3. Upload all files from the `dist` directory to the remote path
 4. Display progress and completion status
 
-### 2. Screenshot Script (`screenshot.js`)
+### 2. GitHub Actions Deployment
+
+Automatic deployment is configured via GitHub Actions in `.github/workflows/deploy.yml`. It triggers on every push to the `main` branch.
+
+#### Setup GitHub Secrets
+
+In your GitHub repository, go to Settings > Secrets and variables > Actions, and add the following secrets:
+
+- `FTP_HOST`: Your FTP server hostname
+- `FTP_PORT`: Your FTP port (usually 21)
+- `FTP_USER`: Your FTP username
+- `FTP_PASSWORD`: Your FTP password
+- `FTP_SECURE`: Set to `true` for FTPS, `false` for FTP
+- `FTP_REMOTE_PATH`: Remote directory path (e.g., `/public_html`)
+
+#### How it works
+
+1. **Trigger**: Pushes to `main` branch
+2. **Build**: Installs dependencies and builds the application
+3. **Deploy**: Runs the same `deploy.js` script with `SKIP_BUILD=true`
+4. **Status**: Check the Actions tab for deployment status
+
+### 3. Screenshot Script (`screenshot.js`)
 
 The `screenshot.js` script automatically takes screenshots of different sections of the application for documentation and testing purposes.
 

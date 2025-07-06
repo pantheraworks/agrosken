@@ -23,7 +23,14 @@ const FTP_CONFIG = {
 const PROJECT_ROOT = join(__dirname, '..');
 const BUILD_DIR = join(PROJECT_ROOT, 'dist');
 
+const shouldBuild = process.env.SKIP_BUILD !== 'true';
+
 function buildApp() {
+  if (!shouldBuild) {
+    console.log('⏭️  Skipping build (SKIP_BUILD=true)');
+    return;
+  }
+  
   console.log('🔨 Building application...');
   try {
     execSync('npm run build', { 
