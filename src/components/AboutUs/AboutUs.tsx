@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { NavLink } from "../NavLink";
-import { 
-  ShieldCheckIcon, 
-  LightBulbIcon, 
-  UsersIcon 
+import {
+  ShieldCheckIcon,
+  LightBulbIcon,
+  UsersIcon,
 } from "@heroicons/react/24/solid";
 import aboutUsBgImg from "../../assets/about-us-bg.jpg";
 import teamMember1Img from "../../assets/team-member-1.jpg";
@@ -29,26 +29,26 @@ const teamMembers = [
 ];
 
 const coreValues = [
-  { 
-    id: 1, 
-    title: "Quality", 
+  {
+    id: 1,
+    title: "Quality",
     description: "Excellence in every service we provide",
     icon: ShieldCheckIcon,
-    color: "text-amber-400"
+    color: "text-amber-400",
   },
-  { 
-    id: 2, 
-    title: "Innovation", 
+  {
+    id: 2,
+    title: "Innovation",
     description: "Cutting-edge agricultural solutions",
     icon: LightBulbIcon,
-    color: "text-green-400"
+    color: "text-green-400",
   },
-  { 
-    id: 3, 
-    title: "Partnership", 
+  {
+    id: 3,
+    title: "Partnership",
     description: "Growing together with our clients",
     icon: UsersIcon,
-    color: "text-blue-400"
+    color: "text-blue-400",
   },
 ];
 
@@ -68,7 +68,7 @@ const AboutUs = () => {
       </div>
 
       {/* Transparent Navbar */}
-      <div 
+      <div
         className="absolute top-0 left-0 right-0 z-20 px-30"
         style={{
           maskImage:
@@ -78,7 +78,10 @@ const AboutUs = () => {
         }}
       >
         <div className="flex w-full justify-between items-center pt-2 border-b-white/20 border-b-1 py-3">
-          <NavLink href="/" className="text-3xl font-bold text-white hover:text-amber-500">
+          <NavLink
+            href="/"
+            className="text-3xl font-bold text-white hover:text-amber-500"
+          >
             AGROSKEN
           </NavLink>
           <div className="flex h-min gap-6 text-white">
@@ -120,13 +123,14 @@ const AboutUs = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <p className="text-lg leading-relaxed text-amber-100">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a aliquet 
-                  erat. Aliquam erat volutpat. Fusce quis scelerisque libero. Proin 
-                  maximus tristique ante vel rhoncus. Nulla egestas magna sed ligula 
-                  iaculis, at consequat libero tristique. Integer auctor a arcu eu congue. 
-                  Morbi et tempus erat, sed tincidunt eros. Suspendisse at turpis sed 
-                  lectus volutpat vestibulum et quis lacus. Sed efficitur lectus ac nulla 
-                  hendrerit laoreet.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
+                  aliquet erat. Aliquam erat volutpat. Fusce quis scelerisque
+                  libero. Proin maximus tristique ante vel rhoncus. Nulla
+                  egestas magna sed ligula iaculis, at consequat libero
+                  tristique. Integer auctor a arcu eu congue. Morbi et tempus
+                  erat, sed tincidunt eros. Suspendisse at turpis sed lectus
+                  volutpat vestibulum et quis lacus. Sed efficitur lectus ac
+                  nulla hendrerit laoreet.
                 </p>
               </motion.div>
 
@@ -146,12 +150,18 @@ const AboutUs = () => {
                       transition={{ duration: 0.6, delay: 0.6 + index * 0.15 }}
                       className="flex items-start space-x-4"
                     >
-                      <div className={`p-3 rounded-lg bg-white/10 ${value.color}`}>
+                      <div
+                        className={`p-3 rounded-lg bg-white/10 ${value.color}`}
+                      >
                         <value.icon className="w-8 h-8" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-semibold mb-1">{value.title}</h3>
-                        <p className="text-amber-100/80 text-sm">{value.description}</p>
+                        <h3 className="text-xl font-semibold mb-1">
+                          {value.title}
+                        </h3>
+                        <p className="text-amber-100/80 text-sm">
+                          {value.description}
+                        </p>
                       </div>
                     </motion.div>
                   ))}
