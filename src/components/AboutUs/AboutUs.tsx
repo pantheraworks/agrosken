@@ -4,7 +4,7 @@ import {
   LightBulbIcon,
   UsersIcon,
 } from "@heroicons/react/24/solid";
-import aboutUsBgImg from "../../assets/about-us-bg.jpg";
+import aboutUsBgImg from "../../assets/about-us-bg.png";
 import teamMember1Img from "../../assets/team-member-1.jpg";
 import teamMember2Img from "../../assets/team-member-2.jpg";
 import teamMember3Img from "../../assets/team-member-3.jpg";
@@ -13,16 +13,19 @@ const teamMembers = [
   {
     id: 1,
     name: "Lorem Ipsum",
+    email: "lorem.ipsum1@agrosken.cz",
     image: teamMember1Img,
   },
   {
     id: 2,
     name: "Lorem Ipsum",
+    email: "lorem.ipsum2@agrosken.cz",
     image: teamMember2Img,
   },
   {
     id: 3,
     name: "Lorem Ipsum",
+    email: "lorem.ipsum3@agrosken.cz",
     image: teamMember3Img,
   },
 ];
@@ -65,7 +68,6 @@ const AboutUs = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-[var(--color-bg-primary)]" />
         </div>
       </div>
-
 
       {/* Content */}
       <div className="relative z-10">
@@ -168,6 +170,13 @@ const AboutUs = () => {
                     />
                   </div>
                   <h3 className="text-lg font-medium">{member.name}</h3>
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="text-sm mt-1 hover:text-amber-300 transition-colors inline-block no-underline"
+                    style={{ color: "rgb(254 243 199 / 0.8)" }}
+                  >
+                    {member.email}
+                  </a>
                 </motion.div>
               ))}
             </div>
