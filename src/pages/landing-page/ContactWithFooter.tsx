@@ -1,5 +1,5 @@
 import Contact from "../../components/Contact";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
 
 const ContactWithFooter = () => {
   return (

@@ -9,7 +9,7 @@ const Footer = () => {
   // ];
 
   const companyLinks = [
-    { name: "About Us", href: "#about" },
+    { name: "About Us", href: "/about-us" },
     { name: "Contact", href: "#contact-section" },
     { name: "Privacy Policy", href: "/privacy-policy" },
   ];
