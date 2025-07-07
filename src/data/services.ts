@@ -1,5 +1,5 @@
 import { type ComponentType } from "react";
-import service1 from "../assets/service_1.png";
+import service1 from "../assets/service-1.png";
 import {
   CameraIcon,
   BeakerIcon,

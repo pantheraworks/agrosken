@@ -17,7 +17,7 @@ export const Hero = () => {
       className="flex h-screen w-screen bg-[var(--color-bg-primary)] items-end relative z-10"
     >
       <motion.div
-        className="absolute inset-0 bg-[url(/src/assets/landing_bg.png)] bg-cover bg-center"
+        className="absolute inset-0 bg-[url(/src/assets/landing-bg.png)] bg-cover bg-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
