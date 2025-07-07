@@ -29,10 +29,7 @@ export const Navbar = () => {
           >
             Services
           </NavLink>
-          <NavLink
-            href={isHomePage ? "#about" : "/#about"}
-            className="hover:text-amber-500"
-          >
+          <NavLink href="/about-us" className="hover:text-amber-500">
             About Us
           </NavLink>
           <NavLink
