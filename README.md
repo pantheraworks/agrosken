@@ -22,7 +22,6 @@ npm run build
 - [Claude Slash Commands](#claude-slash-commands)
 - [Deployment](#deployment)
 
-
 ## 🛠 Tech Stack
 
 - **Frontend**: React 19.1.0 + TypeScript
@@ -32,7 +31,6 @@ npm run build
 - **Routing**: React Router v7
 - **Icons**: Heroicons
 - **Development**: ESLint, Prettier, Puppeteer (screenshots)
-
 
 ## 💻 Development
 
@@ -58,23 +56,24 @@ npm run dev
 
 ### Available Scripts
 
-| Command | Description |
-|---------|------------|
-| `npm run dev` | Start development server at http://localhost:5173 |
-| `npm run build` | Type check and build for production |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format code with Prettier |
-| `npm run screenshot` | Capture screenshots of all pages |
-| `npm run deploy` | Deploy to production (requires .env setup) |
-
+| Command              | Description                                       |
+| -------------------- | ------------------------------------------------- |
+| `npm run dev`        | Start development server at http://localhost:5173 |
+| `npm run build`      | Type check and build for production               |
+| `npm run preview`    | Preview production build locally                  |
+| `npm run lint`       | Run ESLint                                        |
+| `npm run format`     | Format code with Prettier                         |
+| `npm run screenshot` | Capture screenshots of all pages                  |
+| `npm run deploy`     | Deploy to production (requires .env setup)        |
 
 ## 🤖 Claude Slash Commands
 
 This project includes custom slash commands for Claude Code to streamline development:
 
 ### `/component` - Component Creation
+
 Creates new components from reference images with automated workflow:
+
 - Switches to main branch and creates feature branch
 - Searches reference folder for matching designs
 - Generates component with appropriate styling
@@ -82,7 +81,9 @@ Creates new components from reference images with automated workflow:
 - Optionally creates PR when complete
 
 ### `/component-browser` - Browser-Tested Components
+
 Enhanced component creation with real-time testing:
+
 - All features of `/component` plus:
 - Live browser preview using MCP tools
 - Visual comparison with reference designs
@@ -91,7 +92,9 @@ Enhanced component creation with real-time testing:
 - Iterative refinement based on browser feedback
 
 ### `/refactor` - Code Quality
+
 Analyzes and improves code quality:
+
 - Identifies code duplication
 - Finds long functions (>50 lines)
 - Detects complex conditionals
@@ -101,6 +104,7 @@ Analyzes and improves code quality:
 - Creates PR with detailed improvements
 
 ### Usage Example
+
 ```
 User: /component hero-banner
 Claude: I'll create a hero banner component for you. Let me start by checking out the main branch...
@@ -111,10 +115,11 @@ Claude: I'll create a hero banner component for you. Let me start by checking ou
 The project includes automated deployment via GitHub Actions:
 
 1. **Setup Environment Variables**
+
    ```bash
    # Create .env file
    cp .env.example .env
-   
+
    # Add your FTP credentials
    FTP_HOST=your-host.com
    FTP_USER=your-username
@@ -122,6 +127,7 @@ The project includes automated deployment via GitHub Actions:
    ```
 
 2. **Manual Deployment**
+
    ```bash
    npm run deploy
    ```
@@ -143,6 +149,7 @@ npm run screenshot
 ```
 
 Screenshots are saved to `/screenshots/`:
+
 - `full-page.png` - Complete homepage
 - `hero-section.png` - Hero section
 - `services-section.png` - Services showcase
@@ -151,8 +158,6 @@ Screenshots are saved to `/screenshots/`:
 - `privacy-policy.png` - Privacy policy
 - `faq.png` - FAQ page
 
-
 ## 📄 License
 
 This project is proprietary software. All rights reserved.
-

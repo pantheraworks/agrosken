@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Drone body -->
+  <rect x="24" y="28" width="16" height="8" rx="2" fill="#4B5563" stroke="#1F2937" stroke-width="1"/>
+  
+  <!-- Camera/Sensor -->
+  <circle cx="32" cy="34" r="3" fill="#1F2937"/>
+  <circle cx="32" cy="34" r="2" fill="#374151"/>
+  
+  <!-- Arms -->
+  <!-- Top left arm -->
+  <rect x="12" y="30" width="14" height="4" fill="#6B7280" rx="1"/>
+  <!-- Top right arm -->
+  <rect x="38" y="30" width="14" height="4" fill="#6B7280" rx="1"/>
+  <!-- Bottom left arm -->
+  <rect x="12" y="30" width="4" height="14" fill="#6B7280" rx="1" transform="rotate(-45 14 32)"/>
+  <!-- Bottom right arm -->
+  <rect x="48" y="30" width="4" height="14" fill="#6B7280" rx="1" transform="rotate(45 50 32)"/>
+  
+  <!-- Propellers -->
+  <!-- Top left propeller -->
+  <g transform="translate(14, 18)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#9CA3AF" stroke-width="1" opacity="0.5"/>
+    <rect x="-8" y="-1" width="16" height="2" fill="#374151" rx="1"/>
+    <rect x="-1" y="-8" width="2" height="16" fill="#374151" rx="1"/>
+  </g>
+  
+  <!-- Top right propeller -->
+  <g transform="translate(50, 18)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#9CA3AF" stroke-width="1" opacity="0.5"/>
+    <rect x="-8" y="-1" width="16" height="2" fill="#374151" rx="1"/>
+    <rect x="-1" y="-8" width="2" height="16" fill="#374151" rx="1"/>
+  </g>
+  
+  <!-- Bottom left propeller -->
+  <g transform="translate(14, 46)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#9CA3AF" stroke-width="1" opacity="0.5"/>
+    <rect x="-8" y="-1" width="16" height="2" fill="#374151" rx="1"/>
+    <rect x="-1" y="-8" width="2" height="16" fill="#374151" rx="1"/>
+  </g>
+  
+  <!-- Bottom right propeller -->
+  <g transform="translate(50, 46)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#9CA3AF" stroke-width="1" opacity="0.5"/>
+    <rect x="-8" y="-1" width="16" height="2" fill="#374151" rx="1"/>
+    <rect x="-1" y="-8" width="2" height="16" fill="#374151" rx="1"/>
+  </g>
+  
+  <!-- Landing gear -->
+  <rect x="20" y="36" width="2" height="6" fill="#6B7280" rx="1"/>
+  <rect x="42" y="36" width="2" height="6" fill="#6B7280" rx="1"/>
+</svg>
