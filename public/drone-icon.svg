@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- White background -->
+  <rect x="0" y="0" width="64" height="64" fill="white"/>
+  
   <!-- Drone body -->
   <rect x="24" y="28" width="16" height="8" rx="2" fill="#4B5563" stroke="#1F2937" stroke-width="1"/>
   
