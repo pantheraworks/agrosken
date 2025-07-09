@@ -1,5 +1,6 @@
 import { Command, CommandContext, SlashCommandRegistry } from "./types";
 import { componentCommand } from "./commands/component";
+import { componentBrowserCommand } from "./commands/component-browser";
 import { refactorCommand } from "./commands/refactor";
 
 class CommandRegistry implements SlashCommandRegistry {
@@ -56,6 +57,7 @@ class CommandRegistry implements SlashCommandRegistry {
 // Initialize registry and register commands
 export const commandRegistry = new CommandRegistry();
 commandRegistry.register(componentCommand);
+commandRegistry.register(componentBrowserCommand);
 commandRegistry.register(refactorCommand);
 
 // Export for Claude to use

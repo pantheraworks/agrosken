@@ -196,8 +196,7 @@ export const componentCommand: Command = {
         // 1. Parse context.state.integrationLocation to understand where to add
         // 2. Import the new component in the target file
         // 3. Add the component JSX at the specified location
-        // 4. Remove the /stage route and staging files
-        // 5. Run npm run format to ensure code style
+        // 4. Run npm run format to ensure code style
         context.state.integrated = true;
         return {
           success: true,
