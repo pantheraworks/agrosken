@@ -20,6 +20,27 @@ Creates a new component from reference images with the following flow:
 10. Asks for confirmation to create a pull request
 11. Creates PR with the new component (if approved)
 
+### `/component-browser`
+
+Creates a new component with real-time browser testing using MCP browser extension:
+
+1. Checks MCP browser availability
+2. Switches to main branch and creates a feature branch
+3. Asks for component type
+4. Finds matching reference images
+5. Starts development server
+6. Opens browser using MCP tools
+7. Generates initial component
+8. Interactive browser testing:
+   - Live preview of component
+   - Visual comparison with reference
+   - Interaction testing (hover, click)
+   - Console error checking
+9. Iterative refinement based on browser feedback
+10. Integration with browser verification
+11. Final validation across site
+12. Optional PR creation with test results
+
 ### `/refactor`
 
 Analyzes and refactors code for better quality and performance:

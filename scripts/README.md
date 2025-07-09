@@ -11,6 +11,7 @@ The `deploy.js` script builds the application and deploys it to your FTP server.
 #### Setup
 
 1. Install dependencies (already done):
+
    ```bash
    npm install basic-ftp dotenv
    ```
@@ -41,6 +42,7 @@ npm run deploy
 ```
 
 The script will:
+
 1. Build the application using `npm run build`
 2. Connect to your FTP server
 3. Upload all files from the `dist` directory to the remote path
@@ -80,6 +82,7 @@ The `screenshot.js` script automatically takes screenshots of different sections
 #### Usage
 
 1. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -92,6 +95,7 @@ The `screenshot.js` script automatically takes screenshots of different sections
 #### Generated Screenshots
 
 The script creates screenshots in the `screenshots/` directory:
+
 - `full-page.png`: Complete page screenshot
 - `hero-section.png`: Hero section viewport
 - `hero-hover.png`: Button hover state
@@ -105,4 +109,4 @@ The script creates screenshots in the `screenshots/` directory:
 - Automatic navigation between pages
 - Waits for animations and network activity
 - Captures specific sections and interactive states
-- Handles responsive layouts and scroll positioning 
+- Handles responsive layouts and scroll positioning
