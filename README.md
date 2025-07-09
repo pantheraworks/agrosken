@@ -17,22 +17,11 @@ npm run build
 
 ## 📋 Table of Contents
 
-- [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
 - [Development](#development)
 - [Claude Slash Commands](#claude-slash-commands)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
 
-## ✨ Features
-
-- **Smart Crop Monitoring**: Real-time crop monitoring with IoT sensors
-- **Precision Agriculture**: AI-powered analytics for optimized farming
-- **Weather Integration**: Advanced weather forecasting and alerts
-- **Resource Management**: Track and optimize water, fertilizer usage
-- **Data Analytics**: Comprehensive farm performance dashboards
-- **Mobile Responsive**: Full functionality across all devices
 
 ## 🛠 Tech Stack
 
@@ -44,37 +33,6 @@ npm run build
 - **Icons**: Heroicons
 - **Development**: ESLint, Prettier, Puppeteer (screenshots)
 
-## 📁 Project Structure
-
-```mermaid
-graph TD
-    A[agrosken/] --> B[src/]
-    A --> C[scripts/]
-    A --> D[screenshots/]
-    A --> E[.claude/]
-    
-    B --> F[components/]
-    B --> G[pages/]
-    B --> H[data/]
-    B --> I[assets/]
-    
-    F --> J[Hero/]
-    F --> K[Navbar/]
-    F --> L[Services/]
-    F --> M[ServiceCard/]
-    F --> N[Contact/]
-    F --> O[Footer/]
-    
-    G --> P[HomePage.tsx]
-    G --> Q[AboutPage.tsx]
-    G --> R[PrivacyPolicy.tsx]
-    G --> S[FAQ.tsx]
-    
-    E --> T[commands/]
-    T --> U[component.ts]
-    T --> V[component-browser.ts]
-    T --> W[refactor.ts]
-```
 
 ## 💻 Development
 
@@ -110,19 +68,6 @@ npm run dev
 | `npm run screenshot` | Capture screenshots of all pages |
 | `npm run deploy` | Deploy to production (requires .env setup) |
 
-### Development Workflow
-
-```mermaid
-graph LR
-    A[Main Branch] --> B[Pull Latest]
-    B --> C[Create Feature Branch]
-    C --> D[Develop Feature]
-    D --> E[Format Code]
-    E --> F[Run Tests/Lint]
-    F --> G[Create PR]
-    G --> H[Code Review]
-    H --> I[Merge to Main]
-```
 
 ## 🤖 Claude Slash Commands
 
@@ -206,32 +151,8 @@ Screenshots are saved to `/screenshots/`:
 - `privacy-policy.png` - Privacy policy
 - `faq.png` - FAQ page
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Format code (`npm run format`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
-
-### Commit Guidelines
-
-- Use clear, descriptive commit messages
-- Focus on what changed, not who made changes
-- No "Generated with Claude" attributions
-- Follow conventional commits format when possible
 
 ## 📄 License
 
 This project is proprietary software. All rights reserved.
 
-## 🔗 Links
-
-- [Live Demo](https://agrosken.com)
-- [Documentation](.claude/README.md)
-- [Issues](https://github.com/pantheraworks/agrosken/issues)
-
----
-
-Built with ❤️ for modern agriculture
