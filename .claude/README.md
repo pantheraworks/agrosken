@@ -62,6 +62,28 @@ Analyzes and refactors code for better quality and performance:
 9. Optionally generates tests for refactored code
 10. Creates PR with detailed description of improvements
 
+### `/responsive`
+
+Makes existing components responsive with real-time browser testing:
+
+1. Asks which component to make responsive
+2. Finds and analyzes the component's current implementation
+3. Searches references folder for mobile/tablet designs
+4. Checks if development server is running
+5. Opens browser and captures initial desktop view
+6. Implements responsive styles using Tailwind CSS:
+   - Mobile-first approach
+   - Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+   - Responsive padding, margins, typography, and layouts
+7. Tests on multiple viewports:
+   - Mobile (375x667)
+   - Tablet (768x1024)
+   - Desktop and larger screens
+8. Iterates and refines based on visual testing
+9. Captures final screenshots at all breakpoints
+10. Validates accessibility and touch targets
+11. Provides summary of responsive improvements
+
 ## Command Structure
 
 Commands are defined in the `commands/` directory and follow this structure:
