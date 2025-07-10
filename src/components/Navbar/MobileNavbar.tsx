@@ -23,7 +23,7 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
       >
         <div className="flex w-full min-w-screen justify-between items-center pt-2 border-b-1 py-3 px-3">
           <NavLink
-            href={"/"}
+            href={"/#hero-section"}
             className="text-3xl font-bold hover:text-amber-500"
           >
             AGROSKEN
@@ -42,7 +42,7 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
       >
         <div className="flex w-full justify-between items-center py-11 px-3">
           <NavLink
-            href={"/"}
+            href={"/#hero-section"}
             className="text-3xl font-bold hover:text-amber-500"
           >
             AGROSKEN
