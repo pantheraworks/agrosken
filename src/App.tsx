@@ -6,8 +6,9 @@ import StagingPage from "./pages/staging/StagingPage";
 import FAQPage from "./pages/faq/FAQPage";
 import AboutUsPage from "./pages/about-us/AboutUsPage";
 import { ScrollToHash } from "./components/ScrollToHash";
+import { MobileProvider } from "./providers/MobileProvider";
 
-function App() {
+const App = () => {
   return (
     <>
       <ScrollToHash />
@@ -20,6 +21,14 @@ function App() {
       </Routes>
     </>
   );
-}
+};
 
-export default App;
+const AppWithProviders = () => {
+  return (
+    <MobileProvider>
+      <App />
+    </MobileProvider>
+  );
+};
+
+export default AppWithProviders;
