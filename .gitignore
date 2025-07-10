@@ -7,3 +7,6 @@ screenshots
 
 # Reference files
 references/
+
+# macOS
+.DS_Store
