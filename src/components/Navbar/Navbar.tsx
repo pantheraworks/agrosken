@@ -1,6 +1,6 @@
 import { useIsMobile } from "../../providers/MobileProvider";
 import { DesktopNavbar } from "./DesktopNavbar";
-import { MobileNavbar } from "./MobileNavBar";
+import { MobileNavbar } from "./MobileNavbar";
 
 export interface NavbarItem {
   href: string;
