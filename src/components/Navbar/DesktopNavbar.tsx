@@ -17,7 +17,10 @@ export const DesktopNavbar = ({ items }: DesktopNavbarProps) => {
       }}
     >
       <div className=" flex w-full justify-between items-center pt-2 border-b-orange-50 border-b-1 py-3">
-        <NavLink href={"/"} className="text-3xl font-bold hover:text-amber-500">
+        <NavLink
+          href={"/#hero-section"}
+          className="text-3xl font-bold hover:text-amber-500"
+        >
           AGROSKEN
         </NavLink>
         <div className="flex h-min gap-6">
