@@ -16,8 +16,11 @@ export const DesktopNavbar = ({ items }: DesktopNavbarProps) => {
           "linear-gradient(to bottom, black 0%, black 50%, transparent 100%)",
       }}
     >
-      <div className="flex w-full justify-between items-center border-b-orange-50 border-b-1 py-3">
-        <NavLink href={"/#hero-section"} className="text-3xl font-bold hover:text-amber-500">
+      <div className="flex w-full justify-between items-center pt-2 border-b-orange-50 border-b-1 py-3">
+        <NavLink
+          href={"/#hero-section"}
+          className="text-3xl font-bold hover:text-amber-500"
+        >
           AGROSKEN
         </NavLink>
         <div className="flex h-min gap-6">

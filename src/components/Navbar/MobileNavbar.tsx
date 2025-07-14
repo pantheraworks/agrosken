@@ -13,7 +13,7 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
   return (
     <>
       <div
-        className="fixed pt-2 w-full navbar z-50 pb-0"
+        className="fixed pt-8 w-full navbar z-50 pb-0"
         style={{
           maskImage:
             "linear-gradient(to bottom, #302424 0%, black 80%, transparent 100%)",
@@ -21,7 +21,7 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
             "linear-gradient(to bottom, black 0%, black 80%, transparent 100%)",
         }}
       >
-        <div className="flex w-full min-w-screen justify-between items-center border-b-1 py-2 px-3">
+        <div className="flex w-full min-w-screen justify-between items-center pt-2 border-b-1 py-3 px-3">
           <NavLink
             href={"/#hero-section"}
             className="text-3xl font-bold hover:text-amber-500"
@@ -29,7 +29,7 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
             AGROSKEN
           </NavLink>
           <Bars3CenterLeftIcon
-            className="rotate-180 max-h-10 text-white cursor-pointer"
+            className="rotate-180 max-h-10 cursor-pointer"
             onClick={() => setIsOpen(true)}
           />
         </div>
@@ -48,7 +48,7 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
             AGROSKEN
           </NavLink>
           <XMarkIcon
-            className="rotate-180 max-h-10 text-white cursor-pointer"
+            className="rotate-180 max-h-10"
             onClick={() => setIsOpen(false)}
           />
         </div>
