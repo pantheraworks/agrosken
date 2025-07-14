@@ -2,6 +2,7 @@ import { Command, CommandContext, SlashCommandRegistry } from "./types";
 import { componentCommand } from "./commands/component";
 import { componentBrowserCommand } from "./commands/component-browser";
 import { refactorCommand } from "./commands/refactor";
+import { responsiveCommand } from "./commands/responsive";
 
 class CommandRegistry implements SlashCommandRegistry {
   commands: Map<string, Command> = new Map();
@@ -59,6 +60,7 @@ export const commandRegistry = new CommandRegistry();
 commandRegistry.register(componentCommand);
 commandRegistry.register(componentBrowserCommand);
 commandRegistry.register(refactorCommand);
+commandRegistry.register(responsiveCommand);
 
 // Export for Claude to use
 export { Command, CommandContext } from "./types";

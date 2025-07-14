@@ -29,7 +29,7 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
             AGROSKEN
           </NavLink>
           <Bars3CenterLeftIcon
-            className="rotate-180 max-h-10"
+            className="rotate-180 max-h-10 cursor-pointer"
             onClick={() => setIsOpen(true)}
           />
         </div>
@@ -42,7 +42,7 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
       >
         <div className="flex w-full justify-between items-center py-11 px-3">
           <NavLink
-            href={"/"}
+            href={"/#hero-section"}
             className="text-3xl font-bold hover:text-amber-500"
           >
             AGROSKEN
