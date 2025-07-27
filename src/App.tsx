@@ -7,6 +7,7 @@ import FAQPage from "./pages/faq/FAQPage";
 import AboutUsPage from "./pages/about-us/AboutUsPage";
 import { ScrollToHash } from "./components/ScrollToHash";
 import { MobileProvider } from "./providers/MobileProvider";
+import { LocaleProvider } from "./providers/LocaleProvider";
 
 const App = () => {
   return (
@@ -25,9 +26,11 @@ const App = () => {
 
 const AppWithProviders = () => {
   return (
-    <MobileProvider>
-      <App />
-    </MobileProvider>
+    <LocaleProvider>
+      <MobileProvider>
+        <App />
+      </MobileProvider>
+    </LocaleProvider>
   );
 };
 
