@@ -35,8 +35,6 @@ export const LocaleProvider: React.FC<LocaleProviderProps> = ({ children }) => {
     localStorage.setItem(LOCAL_STORAGE_KEY, newLocale);
   };
 
-  console.log("message are", messages, "locale is", locale);
-
   return (
     <LocaleContext.Provider value={{ locale, setLocale: handleSetLocale }}>
       <IntlProvider
