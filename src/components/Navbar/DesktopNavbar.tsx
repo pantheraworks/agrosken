@@ -7,7 +7,7 @@ interface DesktopNavbarProps {
 }
 
 export const DesktopNavbar = ({ items }: DesktopNavbarProps) => {
-  const { setLocale } = useLocale();
+  const { setLocale, locale } = useLocale();
 
   return (
     <div
@@ -34,13 +34,13 @@ export const DesktopNavbar = ({ items }: DesktopNavbarProps) => {
           ))}
           <div className="grid grid-cols-2 divide-x-1 divide-amber-50">
             <div
-              className="text-2xl px-2 cursor-pointer"
+              className={`text-2xl px-2 cursor-pointer ${locale === "cs-CZ" && "underline"}`}
               onClick={() => setLocale("cs-CZ")}
             >
               🇨🇿
             </div>
             <div
-              className="text-2xl px-2 cursor-pointer"
+              className={`text-2xl px-2 cursor-pointer ${locale === "en-US" && "underline"}`}
               onClick={() => setLocale("en-US")}
             >
               🇬🇧
