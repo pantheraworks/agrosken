@@ -1,33 +1,20 @@
 import { useIsMobile } from "../../providers/MobileProvider";
 import { DesktopNavbar } from "./DesktopNavbar";
 import { MobileNavbar } from "./MobileNavbar";
+import { useNavbarItems } from "./NavbarHooks";
 
 export interface NavbarItem {
   href: string;
   label: string;
 }
 
-export const NavbarItems: NavbarItem[] = [
-  {
-    href: "/#services-section",
-    label: "Services",
-  },
-  {
-    href: "/about-us",
-    label: "About Us",
-  },
-  {
-    href: "/#contact-section",
-    label: "Contact",
-  },
-];
-
 export const Navbar = () => {
   const isMobile = useIsMobile();
+  const navbarItems = useNavbarItems();
 
   return isMobile ? (
-    <MobileNavbar items={NavbarItems} />
+    <MobileNavbar items={navbarItems} />
   ) : (
-    <DesktopNavbar items={NavbarItems} />
+    <DesktopNavbar items={navbarItems} />
   );
 };
