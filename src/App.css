@@ -18,7 +18,7 @@ html {
 
 @layer components {
   .circle-icon {
-    @apply aspect-square rounded-full outline-2 h-full 
+    @apply aspect-square rounded-full outline-2 h-auto flex-1 max-w-[30%]
     flex items-center justify-center transition-all cursor-pointer;
   }
 
@@ -32,5 +32,9 @@ html {
 
   .navbar {
     @apply backdrop-blur-sm;
+  }
+
+  .content-padding-x {
+    @apply px-8 md:px-30;
   }
 }

@@ -1,5 +1,19 @@
 {
   "navbar.services": "Services",
   "navbar.about": "About Us",
-  "navbar.contact": "Contact"
+  "navbar.contact": "Contact",
+  "landing.hero.title": "Your project with an elevated view.",
+  "landing.hero.getStarted": "Get Started",
+  "services.title": "Smart Solutions for Smarter Farming",
+  "services.subtitle": "We can help you with:",
+  "services.1.title": "Crop health analysis",
+  "services.1.description": "Identify the exact location, condition, strength, and lushness of vegetation. This detailed analysis guides you on where to sample soil and apply necessary agricultural treatments for optimal growth.",
+  "services.2.title": "Weed detection",
+  "services.2.description": "Quickly identify weed-infested areas to take immediate, effective action during the growing season. Optimize your weed control strategies and apply precise amounts of herbicide exactly where needed, saving you time and money.",
+  "services.3.title": "Prescription and Variable application maps",
+  "services.3.description": "Leverage detailed analysis to generate precise maps for all your agricultural operations. Apply exact amounts of inputs—like fertilizer or pesticides—only where your plants truly need them. This aligns with Precision Agriculture and Agriculture 4.0 principles, boosting efficiency and yields",
+  "services.4.title": "Aerial spraying and spreading",
+  "services.4.description": "Apply inputs with unmatched precision across your fields, even when conditions are too wet for traditional ground machinery. Our advanced drones can apply both liquid and granular substances exactly as your agronomic plan or crop's immediate needs dictate, ensuring timely and effective treatment.",
+  "services.5.title": "Documentation for insurance",
+  "services.5.description": "Facing crop damage from severe weather or wild animal movements? Our detailed field maps provide exact measurements of affected areas, giving you the irrefutable evidence you need to secure the highest possible compensation from your insurance provider. Don't leave money on the table."
 }

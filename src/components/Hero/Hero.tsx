@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { Message, useMessage } from "../../locales/LocaleHooks";
 
 export const Hero = () => {
-  const title = "Lorem ipsum dolor sit amet consectetur adipiscing.";
+  const title = useMessage("landing.hero.title");
 
   const scrollToServices = () => {
     const servicesSection = document.getElementById("services-section");
@@ -22,8 +23,8 @@ export const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       />
-      <div className="flex flex-col px-30 py-8 gap-4 relative z-10">
-        <div className="text-6xl leading-18 max-w-3xl">
+      <div className="flex flex-col content-padding-x py-8 gap-4 relative z-10">
+        <div key={title} className="text-6xl leading-18 max-w-3xl">
           {title.split("").map((char, index) => (
             <motion.span
               key={index}
@@ -54,7 +55,7 @@ export const Hero = () => {
             <ChevronRightIcon className="h-5 w-5" />
           </div>
           <div className="relative text-lg font-bold transition-all duration-500 group-hover:-translate-x-8 z-10">
-            Get Started
+            <Message id="landing.hero.getStarted" />
           </div>
         </motion.div>
       </div>

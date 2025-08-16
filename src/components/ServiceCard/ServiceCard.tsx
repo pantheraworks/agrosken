@@ -1,35 +1,31 @@
-import { type ComponentType } from "react";
+import type { Service } from "../../data/services";
 
 interface ServiceCardProps {
-  icon: ComponentType<{ className?: string }>;
-  title: string;
-  description: string;
-  imageSrc: string;
-  imageAlt?: string;
+  service: Service;
+  reverseOrder?: boolean;
 }
 
 export const ServiceCard = ({
-  icon: Icon,
-  title,
-  description,
-  imageSrc,
-  imageAlt = "Service",
+  service: { icon: Icon, title, description, imageSrc },
+  reverseOrder = false,
 }: ServiceCardProps) => {
   return (
-    <div className="flex w-full gap-20 items-stretch px-30">
+    <div
+      className={`flex ${reverseOrder ? "flex-row-reverse" : "flex-row"} w-full gap-8 lg:gap-20 items-stretch justify-center flex-wrap py-4 px-2 select-none`}
+    >
       <div className="flex flex-col gap-8 flex-1">
-        <div className="flex h-10 gap-4 items-center">
-          <Icon className="h-10 w-10" />
+        <div className="flex min-h-10 h-auto gap-4 items-center">
+          <Icon className="h-10 w-10 min-w-10" />
           <div className="text-3xl font-bold">{title}</div>
         </div>
-        <div>{description}</div>
+        <div className="text-justify">{description}</div>
       </div>
 
-      <div className="relative">
+      <div className="">
         <img
           src={imageSrc}
-          className="h-full w-auto rounded-3xl object-cover"
-          alt={imageAlt}
+          className="rounded-3xl object-cover h-fit w-auto max-h-60"
+          alt={title}
         />
       </div>
     </div>
