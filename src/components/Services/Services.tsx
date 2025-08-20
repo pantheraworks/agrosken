@@ -25,7 +25,7 @@ export const Services = () => {
         onChange={handleCarouselChange}
       />
 
-      <div className="flex flex-wrap h-auto w-full items-center justify-around gap-6 md:gap-12">
+      <div className="flex flex-wrap h-auto w-full max-w-4xl items-center justify-around gap-6 md:gap-12">
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
