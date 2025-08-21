@@ -18,7 +18,7 @@ html {
 
 @layer components {
   .circle-icon {
-    @apply aspect-square rounded-full outline-2 h-auto flex-1 max-w-[30%]
+    @apply aspect-square rounded-full outline-2 h-auto flex-1 max-w-25
     flex items-center justify-center transition-all cursor-pointer;
   }
 
