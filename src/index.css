@@ -30,6 +30,18 @@ body {
   min-height: 100vh;
 }
 
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-tap-highlight-color: transparent;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

@@ -21,17 +21,19 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
             "linear-gradient(to bottom, black 0%, black 80%, transparent 100%)",
         }}
       >
-        <div className="flex w-full min-w-screen justify-between items-center border-b-1 py-2 px-3">
+        <div className="flex w-full justify-between items-center border-b-1 py-2 px-3">
           <NavLink
             href={"/#hero-section"}
-            className="text-3xl font-bold hover:text-amber-500"
+            className="text-3xl font-bold hover:text-amber-500 flex-shrink-0"
           >
             AGROSKEN
           </NavLink>
-          <Bars3CenterLeftIcon
-            className="rotate-180 max-h-10 text-white cursor-pointer"
-            onClick={() => setIsOpen(true)}
-          />
+          <div className="hamburger-icon">
+            <Bars3CenterLeftIcon
+              className="rotate-180 w-10 h-10 text-white cursor-pointer"
+              onClick={() => setIsOpen(true)}
+            />
+          </div>
         </div>
       </div>
 
@@ -43,14 +45,16 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
         <div className="flex w-full justify-between items-center py-11 px-3">
           <NavLink
             href={"/#hero-section"}
-            className="text-3xl font-bold hover:text-amber-500"
+            className="text-3xl font-bold hover:text-amber-500 flex-shrink-0"
           >
             AGROSKEN
           </NavLink>
-          <XMarkIcon
-            className="rotate-180 max-h-10 text-white cursor-pointer"
-            onClick={() => setIsOpen(false)}
-          />
+          <div className="hamburger-icon">
+            <XMarkIcon
+              className="rotate-180 w-10 h-10 text-white cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            />
+          </div>
         </div>
         <div className="flex flex-col gap-20 pt-6">
           {items.map(({ href, label }) => (
