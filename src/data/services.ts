@@ -5,17 +5,18 @@ import prescriptionMaps from "../assets/services/prescription-maps.png";
 import aerialSpraying from "../assets/services/aerial-spraying.png";
 import insuranceDocumentation from "../assets/services/insurance-documentation.png";
 import {
-  CameraIcon,
-  BeakerIcon,
-  BugAntIcon,
+
   CloudIcon,
-  ChartBarIcon,
+  DocumentTextIcon,
 } from "@heroicons/react/24/solid";
+import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import GrassOutlinedIcon from '@mui/icons-material/GrassOutlined';
+import HealthAndSafetyOutlinedIcon from '@mui/icons-material/HealthAndSafetyOutlined';
 import { useMessage } from "../locales/LocaleHooks";
 
 export interface Service {
   id: string;
-  icon: ComponentType<{ className?: string }>;
+  icon: ComponentType<{ className?: string, fontSize: "inherit" }>;
   title: string;
   description: string;
   imageSrc: string;
@@ -26,21 +27,21 @@ export const useServices = (): Service[] => {
   const serviceList = [
     {
       id: "a",
-      icon: CameraIcon,
+      icon: HealthAndSafetyOutlinedIcon,
       title: useMessage("services.1.title"),
       description: useMessage("services.1.description"),
       imageSrc: cropHealth,
     },
     {
       id: "b",
-      icon: BeakerIcon,
+      icon: GrassOutlinedIcon,
       title: useMessage("services.2.title"),
       description: useMessage("services.2.description"),
       imageSrc: weedDetection,
     },
     {
       id: "c",
-      icon: BugAntIcon,
+      icon: MapOutlinedIcon,
       title: useMessage("services.3.title"),
       description: useMessage("services.3.description"),
       imageSrc: prescriptionMaps,
@@ -54,7 +55,7 @@ export const useServices = (): Service[] => {
     },
     {
       id: "e",
-      icon: ChartBarIcon,
+      icon: DocumentTextIcon,
       title: useMessage("services.5.title"),
       description: useMessage("services.5.description"),
       imageSrc: insuranceDocumentation,
