@@ -29,7 +29,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
@@ -74,7 +74,7 @@ const Contact = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
