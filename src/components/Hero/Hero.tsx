@@ -41,7 +41,7 @@ export const Hero = () => {
         </div>
         <motion.div
           className="inline-flex items-center h-8 gap-2 cursor-pointer group relative w-fit"
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{
             delay: 2.0,
