@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useServices } from "../../data/services";
 import { Message } from "../../locales/LocaleHooks";
-import { ServiceCarousel } from "./ServiceCarousel";
+import { ServiceCard } from "../ServiceCard/ServiceCard";
 
 export const Services = () => {
   const services = useServices();
-
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
-  const handleCarouselChange = (index: number) => setActiveServiceIndex(index);
 
   return (
     <div className="w-screen min-h-screen bg-[#261501] flex flex-col items-center content-padding-x py-20 justify-between">
@@ -20,22 +18,24 @@ export const Services = () => {
         </div>
       </div>
 
-      <ServiceCarousel
-        activeIndex={activeServiceIndex}
-        onChange={handleCarouselChange}
-      />
+      <div className="max-w-full">
+        <ServiceCard 
+          service={services[activeServiceIndex]} 
+          reverseOrder={(activeServiceIndex + 1) % 2 === 0} 
+        />
+      </div>
 
-      <div className="flex flex-wrap h-auto w-full max-w-4xl items-center justify-around gap-6 md:gap-12">
+      <div className="flex h-auto w-full max-w-3xl items-center justify-around gap-6 md:gap-12">
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
             <div
               key={service.id}
-              className="circle-icon text-6xl"
+              className="circle-icon text-5xl"
               data-active={activeServiceIndex === index}
               onClick={() => setActiveServiceIndex(index)}
             >
-              <Icon className="h-12 w-12" fontSize="inherit" />
+              <Icon className="h-10 w-10" fontSize="inherit" />
             </div>
           );
         })}
