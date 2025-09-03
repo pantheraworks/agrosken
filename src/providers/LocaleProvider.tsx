@@ -23,12 +23,17 @@ const messages: Record<Locale, LocaleMessages> = {
   "cs-CZ": cs,
 };
 
-const defaultLocale = "cs";
+const defaultLocale: Locale = "cs-CZ";
+
+const getInitialLocale = (): Locale => {
+  const storedLocale = localStorage.getItem(LOCAL_STORAGE_KEY) as Locale;
+  return storedLocale && Object.keys(messages).includes(storedLocale) 
+    ? storedLocale 
+    : defaultLocale;
+};
 
 export const LocaleProvider: React.FC<LocaleProviderProps> = ({ children }) => {
-  const [locale, setLocale] = useState<Locale>(
-    (localStorage.getItem(LOCAL_STORAGE_KEY) as Locale) || defaultLocale
-  );
+  const [locale, setLocale] = useState<Locale>(getInitialLocale());
 
   const handleSetLocale = (newLocale: Locale) => {
     setLocale(newLocale);
