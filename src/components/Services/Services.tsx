@@ -8,7 +8,7 @@ export const Services = () => {
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
 
   return (
-    <div className="w-screen min-h-screen bg-[#261501] flex flex-col items-center content-padding-x py-20 justify-between">
+    <div className="w-full min-h-screen bg-[#261501] flex flex-col items-center content-padding-x py-20 justify-between">
       <div className="py-7 gap-6 flex flex-col items-center text-center">
         <div className="text-3xl md:text-5xl font-bold">
           <Message id="services.title" />

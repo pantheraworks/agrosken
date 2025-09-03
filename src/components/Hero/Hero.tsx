@@ -15,7 +15,7 @@ export const Hero = () => {
   return (
     <div
       id="hero-section"
-      className="flex h-screen w-screen bg-[var(--color-bg-primary)] items-end relative z-10"
+      className="flex h-screen w-full bg-[var(--color-bg-primary)] items-end relative z-10 overflow-hidden"
     >
       <motion.div
         className="absolute inset-0 bg-[url(/src/assets/landing-bg.jpg)] bg-cover bg-center"
@@ -41,7 +41,7 @@ export const Hero = () => {
         </div>
         <motion.div
           className="inline-flex items-center h-8 gap-2 cursor-pointer group relative w-fit"
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{
             delay: 2.0,
