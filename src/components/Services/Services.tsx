@@ -1,39 +1,41 @@
 import { useState } from "react";
-import { ServiceCard } from "../ServiceCard/ServiceCard";
-import { services } from "../../data/services";
+import { useServices } from "../../data/services";
+import { Message } from "../../locales/LocaleHooks";
+import { ServiceCarousel } from "./ServiceCarousel";
 
 export const Services = () => {
-  const [activeServiceId, setActiveServiceId] = useState(services[0].id);
+  const services = useServices();
 
-  const activeService =
-    services.find((service) => service.id === activeServiceId) || services[0];
+  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
+  const handleCarouselChange = (index: number) => setActiveServiceIndex(index);
 
   return (
-    <div className="w-screen h-screen bg-[#261501] flex flex-col items-center px-20 py-20 justify-between">
+    <div className="w-screen min-h-screen bg-[#261501] flex flex-col items-center content-padding-x py-20 justify-between">
       <div className="py-7 gap-6 flex flex-col items-center text-center">
-        <div className="text-5xl font-bold">
-          Smart Solutions for Smarter Farming
+        <div className="text-3xl md:text-5xl font-bold">
+          <Message id="services.title" />
         </div>
-        <div className="w-fit text-2xl">See what we offer:</div>
+        <div className="w-fit text-2xl">
+          <Message id="services.subtitle" />
+        </div>
       </div>
-      <ServiceCard
-        icon={activeService.icon}
-        title={activeService.title}
-        description={activeService.description}
-        imageSrc={activeService.imageSrc}
-        imageAlt={activeService.imageAlt}
+
+      <ServiceCarousel
+        activeIndex={activeServiceIndex}
+        onChange={handleCarouselChange}
       />
-      <div className="flex h-25 w-full px-50 items-center justify-around text-3xl">
-        {services.map((service) => {
+
+      <div className="flex flex-wrap h-auto w-full max-w-4xl items-center justify-around gap-6 md:gap-12">
+        {services.map((service, index) => {
           const Icon = service.icon;
           return (
             <div
               key={service.id}
-              className="circle-icon"
-              data-active={activeServiceId === service.id}
-              onClick={() => setActiveServiceId(service.id)}
+              className="circle-icon text-6xl"
+              data-active={activeServiceIndex === index}
+              onClick={() => setActiveServiceIndex(index)}
             >
-              <Icon className="h-12 w-12" />
+              <Icon className="h-12 w-12" fontSize="inherit" />
             </div>
           );
         })}

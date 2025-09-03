@@ -1,66 +1,66 @@
 import { type ComponentType } from "react";
-import service1 from "../assets/service-1.png";
+import cropHealth from "../assets/services/crop-health.png";
+import weedDetection from "../assets/services/weed-detection.png";
+import prescriptionMaps from "../assets/services/prescription-maps.png";
+import aerialSpraying from "../assets/services/aerial-spraying.png";
+import insuranceDocumentation from "../assets/services/insurance-documentation.png";
 import {
-  CameraIcon,
-  BeakerIcon,
-  BugAntIcon,
+
   CloudIcon,
-  ChartBarIcon,
+  DocumentTextIcon,
 } from "@heroicons/react/24/solid";
+import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import GrassOutlinedIcon from '@mui/icons-material/GrassOutlined';
+import HealthAndSafetyOutlinedIcon from '@mui/icons-material/HealthAndSafetyOutlined';
+import { useMessage } from "../locales/LocaleHooks";
 
 export interface Service {
   id: string;
-  icon: ComponentType<{ className?: string }>;
+  icon: ComponentType<{ className?: string, fontSize: "inherit" }>;
   title: string;
   description: string;
   imageSrc: string;
   imageAlt?: string;
 }
 
-export const services: Service[] = [
-  {
-    id: "a",
-    icon: CameraIcon,
-    title: "Smart Crop Monitoring",
-    description:
-      "Monitor your crops in real-time with advanced IoT sensors and AI-powered analytics. Track soil moisture, temperature, and growth patterns to optimize yields and reduce resource waste.",
-    imageSrc: service1,
-    imageAlt: "Smart Crop Monitoring",
-  },
-  {
-    id: "b",
-    icon: BeakerIcon,
-    title: "Precision Irrigation",
-    description:
-      "Automated irrigation systems that deliver the right amount of water at the right time. Save up to 40% on water usage while maximizing crop health and productivity.",
-    imageSrc: service1,
-    imageAlt: "Precision Irrigation",
-  },
-  {
-    id: "c",
-    icon: BugAntIcon,
-    title: "Pest Detection AI",
-    description:
-      "Early detection of pests and diseases using computer vision and machine learning. Get alerts before problems spread and protect your harvest with targeted interventions.",
-    imageSrc: service1,
-    imageAlt: "Pest Detection AI",
-  },
-  {
-    id: "d",
-    icon: CloudIcon,
-    title: "Weather Analytics",
-    description:
-      "Hyper-local weather forecasting and climate analytics tailored for agriculture. Make informed decisions about planting, harvesting, and protection against weather events.",
-    imageSrc: service1,
-    imageAlt: "Weather Analytics",
-  },
-  {
-    id: "e",
-    icon: ChartBarIcon,
-    title: "Yield Optimization",
-    description:
-      "Data-driven insights to maximize your crop yields. Combine soil analysis, weather data, and growth patterns to optimize planting strategies and resource allocation.",
-    imageSrc: service1,
-    imageAlt: "Yield Optimization",
-  },
-];
+export const useServices = (): Service[] => {
+  const serviceList = [
+    {
+      id: "a",
+      icon: HealthAndSafetyOutlinedIcon,
+      title: useMessage("services.1.title"),
+      description: useMessage("services.1.description"),
+      imageSrc: cropHealth,
+    },
+    {
+      id: "b",
+      icon: GrassOutlinedIcon,
+      title: useMessage("services.2.title"),
+      description: useMessage("services.2.description"),
+      imageSrc: weedDetection,
+    },
+    {
+      id: "c",
+      icon: MapOutlinedIcon,
+      title: useMessage("services.3.title"),
+      description: useMessage("services.3.description"),
+      imageSrc: prescriptionMaps,
+    },
+    {
+      id: "d",
+      icon: CloudIcon,
+      title: useMessage("services.4.title"),
+      description: useMessage("services.4.description"),
+      imageSrc: aerialSpraying,
+    },
+    {
+      id: "e",
+      icon: DocumentTextIcon,
+      title: useMessage("services.5.title"),
+      description: useMessage("services.5.description"),
+      imageSrc: insuranceDocumentation,
+    },
+  ];
+
+  return serviceList;
+};

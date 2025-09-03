@@ -11,7 +11,7 @@ export const LandingPage = () => {
         <section className="h-screen">
           <Hero />
         </section>
-        <section id="services-section" className="h-screen">
+        <section id="services-section">
           <Services />
         </section>
         <ContactWithFooter />
