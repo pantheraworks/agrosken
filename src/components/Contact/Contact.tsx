@@ -25,9 +25,9 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-[#261501] text-white px-6 h-full">
-      <div className="max-w-7xl mx-auto h-full flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
+    <section className="bg-[#261501] text-white h-full overflow-x-hidden">
+      <div className="content-padding-x h-full flex items-center py-8 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -35,9 +35,7 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl md:text-6xl font-bold mb-4">
-              Let's work
-              <br />
-              together.
+              Let's work together.
             </h2>
             <p className="text-xl text-white mb-12">
               Feel free to ask anything.
@@ -67,7 +65,7 @@ const Contact = () => {
               <div className="flex items-center space-x-4">
                 <MapPinIcon className="h-6 w-6" />
                 <span className="text-lg text-white">
-                  1234 Lorem Ipsum, Dolor Sit.
+                  Prague, Czech Republic
                 </span>
               </div>
             </div>

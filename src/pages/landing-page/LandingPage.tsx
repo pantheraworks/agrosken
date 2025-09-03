@@ -5,9 +5,9 @@ import ContactWithFooter from "./ContactWithFooter";
 
 export const LandingPage = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
-      <div className="h-screen overflow-y-scroll">
+      <div className="h-screen overflow-y-scroll overflow-x-hidden">
         <section className="h-screen">
           <Hero />
         </section>
