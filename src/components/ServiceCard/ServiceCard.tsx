@@ -11,7 +11,7 @@ export const ServiceCard = ({
 }: ServiceCardProps) => {
   return (
     <div
-      className={`flex ${reverseOrder ? "flex-row-reverse" : "flex-row"} w-full gap-8 lg:gap-20 items-stretch justify-center flex-wrap py-4 px-2 select-none`}
+      className={`flex flex-col ${reverseOrder ? "sm:flex-row-reverse" : "sm:flex-row"} w-full gap-8 lg:gap-20 items-stretch justify-center py-4 px-2 select-none`}
     >
       <div className="flex flex-col gap-8 flex-1">
         <div className="flex min-h-10 h-auto gap-4 items-center text-5xl">
@@ -21,10 +21,10 @@ export const ServiceCard = ({
         <div className="text-justify">{description}</div>
       </div>
 
-      <div className="">
+      <div className="flex justify-center">
         <img
           src={imageSrc}
-          className="rounded-3xl object-cover h-fit w-auto max-h-60"
+          className="rounded-3xl object-cover h-fit w-auto max-h-40 md:max-h-60"
           alt={title}
         />
       </div>

@@ -18,7 +18,7 @@ export const Services = () => {
         </div>
       </div>
 
-      <div className="max-w-full">
+      <div className="max-w-full h-auto min-h-130">
         <ServiceCard 
           service={services[activeServiceIndex]} 
           reverseOrder={(activeServiceIndex + 1) % 2 === 0} 
