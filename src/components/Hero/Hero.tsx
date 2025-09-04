@@ -9,6 +9,8 @@ export const Hero = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const [chevronAnimationOffset, setChevronAnimationOffset] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  
+  const buttonAnimationDelay = 0.7 + title.length * 0.03;
 
   useEffect(() => {
     if (textRef.current) {
@@ -52,11 +54,12 @@ export const Hero = () => {
           ))}
         </div>
         <motion.div
+          key={getStartedText}
           className="inline-flex items-center h-8 gap-2 cursor-pointer group relative w-fit"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{
-            delay: 2.0,
+            delay: buttonAnimationDelay,
             duration: 0.8,
             ease: "easeOut",
           }}
