@@ -31,11 +31,11 @@ export const Services = () => {
           return (
             <div
               key={service.id}
-              className="circle-icon text-5xl"
+              className="circle-icon text-4xl sm:text-5xl"
               data-active={activeServiceIndex === index}
               onClick={() => setActiveServiceIndex(index)}
             >
-              <Icon className="h-10 w-10" fontSize="inherit" />
+              <Icon className="h-8 w-8 sm:h-10 sm:w-10" fontSize="inherit" />
             </div>
           );
         })}
