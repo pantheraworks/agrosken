@@ -18,5 +18,9 @@
   "services.5.description": "Facing crop damage from severe weather or wild animal movements? Our detailed field maps provide exact measurements of affected areas, giving you the irrefutable evidence you need to secure the highest possible compensation from your insurance provider. Don't leave money on the table.",
   "contact.address": "Prague, Czech Republic",
   "contact.title": "Let's work together.",
-  "contact.subtitle": "Share your vision, and we'll make it happen."
+  "contact.subtitle": "Share your vision, and we'll make it happen.",
+  "contact.form.name": "Name",
+  "contact.form.email": "Email",
+  "contact.form.phone": "Phone",
+  "contact.form.message": "Describe your project"
 }

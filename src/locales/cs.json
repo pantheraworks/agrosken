@@ -18,5 +18,9 @@
   "services.5.description": "Čelíte ztrátě úrody v důsledku nepříznivého počasí nebo působením zvěře? Naše detailní mapy polí poskytují přesná měření zasažených oblastí, čímž získáte nezvratné důkazy, které využijete k dosažení nejvyšší možné kompenzace od vaší pojišťovny. Nepřicházejte o své investice.",
   "contact.address": "Praha, Česká republika",
   "contact.title": "Pojďme spolupracovat.",
-  "contact.subtitle": "Sdílejte svou vizi a my ji uskutečníme."
+  "contact.subtitle": "Sdílejte svou vizi a my ji uskutečníme.",
+  "contact.form.name": "Jméno",
+  "contact.form.email": "E-mail",
+  "contact.form.phone": "Telefon",
+  "contact.form.message": "Popište váš projekt"
 }
