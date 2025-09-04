@@ -1,9 +1,21 @@
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { Message, useMessage } from "../../locales/LocaleHooks";
+import { useRef, useEffect, useState } from "react";
 
 export const Hero = () => {
   const title = useMessage("landing.hero.title");
+  const getStartedText = useMessage("landing.hero.getStarted");
+  const textRef = useRef<HTMLDivElement>(null);
+  const [chevronAnimationOffset, setChevronAnimationOffset] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (textRef.current) {
+      const width = textRef.current.getBoundingClientRect().width;
+      setChevronAnimationOffset(width + 12);
+    }
+  }, [getStartedText]);
 
   const scrollToServices = () => {
     const servicesSection = document.getElementById("services-section");
@@ -49,12 +61,22 @@ export const Hero = () => {
             ease: "easeOut",
           }}
           onClick={scrollToServices}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <div className="absolute inset-0 -left-2 -right-2 bg-[var(--color-primary-amber)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div className="relative bg-[var(--color-primary-amber)] h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 group-hover:translate-x-[110px] group-hover:bg-transparent z-10">
+          <div 
+            className="relative bg-[var(--color-primary-amber)] h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 group-hover:bg-transparent z-10"
+            style={{
+              transform: isHovered ? `translateX(${chevronAnimationOffset}px)` : 'translateX(0px)',
+            }}
+          >
             <ChevronRightIcon className="h-5 w-5" />
           </div>
-          <div className="relative text-lg font-bold transition-all duration-500 group-hover:-translate-x-8 z-10">
+          <div 
+            ref={textRef}
+            className="relative text-lg font-bold transition-all duration-500 group-hover:-translate-x-8 z-10"
+          >
             <Message id="landing.hero.getStarted" />
           </div>
         </motion.div>
