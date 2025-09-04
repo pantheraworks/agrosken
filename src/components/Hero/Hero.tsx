@@ -55,7 +55,7 @@ export const Hero = () => {
         </div>
         <motion.div
           key={getStartedText}
-          className="inline-flex items-center h-8 gap-2 cursor-pointer group relative w-fit"
+          className="inline-flex items-center h-8 gap-2 cursor-pointer group relative w-fit mb-16 md:mb-0"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{
