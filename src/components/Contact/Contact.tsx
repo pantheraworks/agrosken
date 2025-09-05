@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { useMessage } from "../../locales/LocaleHooks";
 
 const Contact = () => {
+  const address = useMessage("contact.address");
+  const title = useMessage("contact.title");
+  const subtitle = useMessage("contact.subtitle");
+  const nameLabel = useMessage("contact.form.name");
+  const emailLabel = useMessage("contact.form.email");
+  const phoneLabel = useMessage("contact.form.phone");
+  const messageLabel = useMessage("contact.form.message");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,21 +43,21 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl md:text-6xl font-bold mb-4">
-              Let's work together.
+              {title}
             </h2>
             <p className="text-xl text-white mb-12">
-              Feel free to ask anything.
+              {subtitle}
             </p>
 
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <PhoneIcon className="h-6 w-6" />
                 <a
-                  href="tel:+12345678"
+                  href="tel:+420773640132"
                   className="text-lg text-white hover:text-amber-500 transition-colors"
                   style={{ color: "white" }}
                 >
-                  +1 2 3456 789
+                  +420 773 640 132
                 </a>
               </div>
               <div className="flex items-center space-x-4">
@@ -59,13 +67,13 @@ const Contact = () => {
                   className="text-lg text-white hover:text-amber-500 transition-colors"
                   style={{ color: "white" }}
                 >
-                  info@agrosken.com
+                  kriz@agrosken.cz
                 </a>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPinIcon className="h-6 w-6" />
                 <span className="text-lg text-white">
-                  Prague, Czech Republic
+                  {address}
                 </span>
               </div>
             </div>
@@ -81,7 +89,7 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="text-sm text-gray-400 block mb-1">
-                    Name
+                    {nameLabel}
                   </label>
                   <input
                     type="text"
@@ -94,7 +102,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <label className="text-sm text-gray-400 block mb-1">
-                    Email
+                    {emailLabel}
                   </label>
                   <input
                     type="email"
@@ -109,7 +117,7 @@ const Contact = () => {
 
               <div>
                 <label className="text-sm text-gray-400 block mb-1">
-                  Phone
+                  {phoneLabel}
                 </label>
                 <input
                   type="tel"
@@ -122,7 +130,7 @@ const Contact = () => {
 
               <div>
                 <label className="text-sm text-gray-400 block mb-1">
-                  Tell us about your interest
+                  {messageLabel}
                 </label>
                 <textarea
                   name="message"

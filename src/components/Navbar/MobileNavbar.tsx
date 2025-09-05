@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "../NavLink";
 import { Bars3CenterLeftIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { useLocale } from "../../locales/LocaleHooks";
 import type { NavbarItem } from "./Navbar";
 
 interface MobileNavbarProps {
@@ -9,6 +10,7 @@ interface MobileNavbarProps {
 
 export const MobileNavbar = ({ items }: MobileNavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { setLocale, locale } = useLocale();
 
   return (
     <>
@@ -67,6 +69,28 @@ export const MobileNavbar = ({ items }: MobileNavbarProps) => {
               {label}
             </NavLink>
           ))}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-2 divide-x-1 divide-amber-50">
+              <div
+                className={`text-4xl px-4 cursor-pointer select-none ${locale === "cs-CZ" && "underline"}`}
+                onClick={() => {
+                  setLocale("cs-CZ");
+                  setIsOpen(false);
+                }}
+              >
+                🇨🇿
+              </div>
+              <div
+                className={`text-4xl px-4 cursor-pointer select-none ${locale === "en-US" && "underline"}`}
+                onClick={() => {
+                  setLocale("en-US");
+                  setIsOpen(false);
+                }}
+              >
+                🇬🇧
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
