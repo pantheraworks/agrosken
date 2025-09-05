@@ -11,6 +11,7 @@ const Contact = () => {
   const emailLabel = useMessage("contact.form.email");
   const phoneLabel = useMessage("contact.form.phone");
   const messageLabel = useMessage("contact.form.message");
+  const sendLabel = useMessage("contact.form.send");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -152,7 +153,7 @@ const Contact = () => {
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Send message
+{sendLabel}
                 </motion.button>
               </div>
             </form>
