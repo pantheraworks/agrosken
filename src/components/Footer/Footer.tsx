@@ -28,14 +28,14 @@ const Footer = () => {
   return (
     <footer className="bg-[var(--color-footer-amber)] text-white py-6 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row md:justify-between gap-6">
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <h2 className="text-2xl font-bold">AGROSKEN</h2>
           </div>
 
           {/* Links Sections */}
-          <div className="flex gap-12">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-12">
             {/* Company Section */}
             <div>
               <h3 className="text-base font-semibold mb-2">{companyLabel}</h3>

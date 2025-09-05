@@ -5,7 +5,6 @@ import type { NavbarItem } from "./Navbar";
 export const useNavbarItems = (): NavbarItem[] => {
   const servicesLabel = useMessage("navbar.services");
   const contactLabel = useMessage("navbar.contact");
-  const privacyPolicyLabel = useMessage("footer.privacyPolicy");
   const faqLabel = useMessage("footer.faq");
 
   return useMemo(
@@ -23,6 +22,6 @@ export const useNavbarItems = (): NavbarItem[] => {
         label: faqLabel,
       },
     ],
-    [servicesLabel, contactLabel]
+    [servicesLabel, contactLabel, faqLabel]
   );
 };
