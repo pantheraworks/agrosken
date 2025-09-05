@@ -1,6 +1,14 @@
 import { NavLink } from "../NavLink";
+import { useMessage } from "../../locales/LocaleHooks";
 
 const Footer = () => {
+  const companyLabel = useMessage("footer.company");
+  const resourcesLabel = useMessage("footer.resources");
+  const contactLabel = useMessage("footer.contact");
+  const privacyPolicyLabel = useMessage("footer.privacyPolicy");
+  const faqLabel = useMessage("footer.faq");
+  const copyrightLabel = useMessage("footer.copyright");
+
   // TODO: Implement social links section
   // const socialLinks = [
   //   { name: "X", href: "#", icon: "𝕏" },
@@ -9,15 +17,12 @@ const Footer = () => {
   // ];
 
   const companyLinks = [
-    { name: "About Us", href: "/about-us" },
-    { name: "Contact", href: "#contact-section" },
-    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: contactLabel, href: "#contact-section" },
+    { name: privacyPolicyLabel, href: "/privacy-policy" },
   ];
 
   const resourcesLinks = [
-    { name: "Blog", href: "#blog" },
-    { name: "Support", href: "#support" },
-    { name: "FAQ", href: "/faq" },
+    { name: faqLabel, href: "/faq" },
   ];
 
   return (
@@ -33,7 +38,7 @@ const Footer = () => {
           <div className="flex gap-12">
             {/* Company Section */}
             <div>
-              <h3 className="text-base font-semibold mb-2">Company</h3>
+              <h3 className="text-base font-semibold mb-2">{companyLabel}</h3>
               <ul className="space-y-1 text-sm">
                 {companyLinks.map((link) => (
                   <li key={link.name}>
@@ -47,7 +52,7 @@ const Footer = () => {
 
             {/* Resources Section */}
             <div>
-              <h3 className="text-base font-semibold mb-2">Resources</h3>
+              <h3 className="text-base font-semibold mb-2">{resourcesLabel}</h3>
               <ul className="space-y-1 text-sm">
                 {resourcesLinks.map((link) => (
                   <li key={link.name}>
@@ -63,7 +68,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-6 pt-4 border-t border-[var(--color-footer-amber-dark)] text-center text-sm">
-          <p>© {new Date().getFullYear()} Agrosken. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Agrosken. {copyrightLabel}</p>
         </div>
       </div>
     </footer>

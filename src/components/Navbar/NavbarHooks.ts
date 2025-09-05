@@ -4,8 +4,9 @@ import type { NavbarItem } from "./Navbar";
 
 export const useNavbarItems = (): NavbarItem[] => {
   const servicesLabel = useMessage("navbar.services");
-  const aboutLabel = useMessage("navbar.about");
   const contactLabel = useMessage("navbar.contact");
+  const privacyPolicyLabel = useMessage("footer.privacyPolicy");
+  const faqLabel = useMessage("footer.faq");
 
   return useMemo(
     () => [
@@ -14,14 +15,14 @@ export const useNavbarItems = (): NavbarItem[] => {
         label: servicesLabel,
       },
       {
-        href: "/about-us",
-        label: aboutLabel,
-      },
-      {
         href: "/#contact-section",
         label: contactLabel,
       },
+      {
+        href: "/faq",
+        label: faqLabel,
+      },
     ],
-    [servicesLabel, aboutLabel, contactLabel]
+    [servicesLabel, contactLabel]
   );
 };

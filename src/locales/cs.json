@@ -22,5 +22,12 @@
   "contact.form.name": "Jméno",
   "contact.form.email": "E-mail",
   "contact.form.phone": "Telefon",
-  "contact.form.message": "Popište váš projekt"
+  "contact.form.message": "Popište váš projekt",
+  "contact.form.send": "Odeslat zprávu",
+  "footer.company": "Společnost",
+  "footer.resources": "Zdroje",
+  "footer.contact": "Kontakt",
+  "footer.privacyPolicy": "Zásady ochrany osobních údajů",
+  "footer.faq": "FAQ",
+  "footer.copyright": "Všechna práva vyhrazena."
 }

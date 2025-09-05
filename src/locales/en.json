@@ -22,5 +22,12 @@
   "contact.form.name": "Name",
   "contact.form.email": "Email",
   "contact.form.phone": "Phone",
-  "contact.form.message": "Describe your project"
+  "contact.form.message": "Describe your project",
+  "contact.form.send": "Send message",
+  "footer.company": "Company",
+  "footer.resources": "Resources",
+  "footer.contact": "Contact",
+  "footer.privacyPolicy": "Privacy Policy",
+  "footer.faq": "FAQ",
+  "footer.copyright": "All rights reserved."
 }
