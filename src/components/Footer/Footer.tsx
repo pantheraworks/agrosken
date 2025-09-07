@@ -3,10 +3,10 @@ import { useMessage } from "../../locales/LocaleHooks";
 
 const Footer = () => {
   const companyLabel = useMessage("footer.company");
-  const resourcesLabel = useMessage("footer.resources");
+  // const resourcesLabel = useMessage("footer.resources");
   const contactLabel = useMessage("footer.contact");
   const privacyPolicyLabel = useMessage("footer.privacyPolicy");
-  const faqLabel = useMessage("footer.faq");
+  // const faqLabel = useMessage("footer.faq");
   const copyrightLabel = useMessage("footer.copyright");
 
   // TODO: Implement social links section
@@ -21,9 +21,9 @@ const Footer = () => {
     { name: privacyPolicyLabel, href: "/privacy-policy" },
   ];
 
-  const resourcesLinks = [
-    { name: faqLabel, href: "/faq" },
-  ];
+  // const resourcesLinks = [
+  //   { name: faqLabel, href: "/faq" },
+  // ];
 
   return (
     <footer className="bg-[var(--color-footer-amber)] text-white py-6 px-6">
@@ -49,8 +49,8 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-
-            {/* Resources Section */}
+            {/* 
+            Resources Section
             <div>
               <h3 className="text-base font-semibold mb-2">{resourcesLabel}</h3>
               <ul className="space-y-1 text-sm">
@@ -62,13 +62,15 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-6 pt-4 border-t border-[var(--color-footer-amber-dark)] text-center text-sm">
-          <p>© {new Date().getFullYear()} Agrosken. {copyrightLabel}</p>
+          <p>
+            © {new Date().getFullYear()} Agrosken. {copyrightLabel}
+          </p>
         </div>
       </div>
     </footer>
