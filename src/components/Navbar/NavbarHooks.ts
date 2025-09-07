@@ -5,7 +5,7 @@ import type { NavbarItem } from "./Navbar";
 export const useNavbarItems = (): NavbarItem[] => {
   const servicesLabel = useMessage("navbar.services");
   const contactLabel = useMessage("navbar.contact");
-  const faqLabel = useMessage("footer.faq");
+  // const faqLabel = useMessage("footer.faq");
 
   return useMemo(
     () => [
@@ -17,11 +17,11 @@ export const useNavbarItems = (): NavbarItem[] => {
         href: "/#contact-section",
         label: contactLabel,
       },
-      {
-        href: "/faq",
-        label: faqLabel,
-      },
+      // {
+      //   href: "/faq",
+      //   label: faqLabel,
+      // },
     ],
-    [servicesLabel, contactLabel, faqLabel]
+    [servicesLabel, contactLabel]
   );
 };
