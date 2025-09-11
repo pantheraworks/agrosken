@@ -8,7 +8,7 @@ export type ContactRequest = {
 };
 
 const createContactRequest = async (contactRequest: ContactRequest) => {
-  const response = await fetch("http://localhost:3015/agrosken/contact", {
+  const response = await fetch("https://api.aresultz.com/agrosken/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
