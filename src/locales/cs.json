@@ -24,6 +24,8 @@
   "contact.form.phone": "Telefon",
   "contact.form.message": "Popište váš projekt",
   "contact.form.send": "Odeslat zprávu",
+  "contact.form.loading": "Odesílání",
+  "contact.form.submitted": "Odesláno",
   "footer.company": "Společnost",
   "footer.resources": "Zdroje",
   "footer.contact": "Kontakt",
