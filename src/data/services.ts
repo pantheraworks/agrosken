@@ -1,9 +1,9 @@
 import { type ComponentType } from "react";
-import cropHealth from "../assets/services/crop-health.png";
-import weedDetection from "../assets/services/weed-detection.png";
-import prescriptionMaps from "../assets/services/prescription-maps.png";
-import aerialSpraying from "../assets/services/aerial-spraying.png";
-import insuranceDocumentation from "../assets/services/insurance-documentation.png";
+import cropHealth from "../assets/services/crop-health.jpg";
+import weedDetection from "../assets/services/weed-detection.jpg";
+import prescriptionMaps from "../assets/services/prescription-maps.jpg";
+import aerialSpraying from "../assets/services/aerial-spraying.jpg";
+import insuranceDocumentation from "../assets/services/insurance-documentation.jpg";
 import {
 
   CloudIcon,
