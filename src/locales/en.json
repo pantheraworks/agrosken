@@ -24,6 +24,8 @@
   "contact.form.phone": "Phone",
   "contact.form.message": "Describe your project",
   "contact.form.send": "Send message",
+  "contact.form.loading": "Sending",
+  "contact.form.submitted": "Sent",
   "footer.company": "Company",
   "footer.resources": "Resources",
   "footer.contact": "Contact",

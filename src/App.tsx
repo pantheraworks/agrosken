@@ -5,6 +5,7 @@ import PrivacyPolicyPage from "./pages/privacy-policy/PrivacyPolicyPage";
 import { ScrollToHash } from "./components/ScrollToHash";
 import { MobileProvider } from "./providers/MobileProvider";
 import { LocaleProvider } from "./providers/LocaleProvider";
+import { QueryProvider } from "./providers/QueryProvider";
 
 const App = () => {
   return (
@@ -23,11 +24,13 @@ const App = () => {
 
 const AppWithProviders = () => {
   return (
-    <LocaleProvider>
-      <MobileProvider>
-        <App />
-      </MobileProvider>
-    </LocaleProvider>
+    <QueryProvider>
+      <LocaleProvider>
+        <MobileProvider>
+          <App />
+        </MobileProvider>
+      </LocaleProvider>
+    </QueryProvider>
   );
 };
 
