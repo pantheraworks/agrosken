@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import {
   useGetContactRequests,
   type ContactRequestResponse,
@@ -10,6 +12,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import DescriptionIcon from "@mui/icons-material/Description";
+import LockIcon from "@mui/icons-material/Lock";
 
 const formatDate = (createdAt: ContactRequestResponse["createdAt"]) => {
   const date = new Date(createdAt._seconds * 1000);
@@ -110,14 +113,108 @@ const RequestCard = ({
   );
 };
 
+const PasswordScreen = ({
+  onSubmit,
+  initialPassword,
+}: {
+  onSubmit: (password: string) => void;
+  initialPassword: string;
+}) => {
+  const [password, setPassword] = useState(initialPassword);
+
+  useEffect(() => {
+    if (initialPassword) {
+      setPassword(initialPassword);
+    }
+  }, [initialPassword]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (password.trim()) {
+      onSubmit(password.trim());
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 flex items-center justify-center p-6">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="w-full max-w-md"
+      >
+        <div className="bg-gradient-to-br from-neutral-800/80 to-neutral-900/80 backdrop-blur-sm rounded-2xl p-8 border border-neutral-700/50 shadow-2xl">
+          <div className="flex flex-col items-center mb-8">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-4">
+              <LockIcon className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="text-2xl font-bold text-white">Admin Access</h1>
+            <p className="text-neutral-400 text-sm mt-2 text-center">
+              Enter your password to access the dashboard
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="text-sm text-neutral-400 block mb-2">
+                Password
+              </label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full bg-neutral-900/50 border border-neutral-700 rounded-lg py-3 px-4 text-white placeholder-neutral-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-all"
+                placeholder="Enter password"
+                autoFocus
+              />
+            </div>
+
+            <motion.button
+              type="submit"
+              disabled={!password.trim()}
+              className="w-full py-3 px-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold rounded-lg hover:from-amber-600 hover:to-orange-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              whileTap={{ scale: 0.98 }}
+            >
+              Access Dashboard
+            </motion.button>
+          </form>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 export const AdminDashboard = () => {
+  const [searchParams] = useSearchParams();
+  const [authKey, setAuthKey] = useState<string | null>(null);
+  const [initialPassword, setInitialPassword] = useState("");
+
+  useEffect(() => {
+    const authKeyParam = searchParams.get("authKey");
+    if (authKeyParam) {
+      setInitialPassword(authKeyParam);
+    }
+  }, [searchParams]);
+
   const {
     data: requests,
     isLoading,
     isError,
     refetch,
     isFetching,
-  } = useGetContactRequests();
+  } = useGetContactRequests(authKey);
+
+  const handlePasswordSubmit = (password: string) => {
+    setAuthKey(password);
+  };
+
+  if (!authKey) {
+    return (
+      <PasswordScreen
+        onSubmit={handlePasswordSubmit}
+        initialPassword={initialPassword}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950">
@@ -158,14 +255,14 @@ export const AdminDashboard = () => {
             <CancelIcon className="w-12 h-12 text-red-400 mb-4" />
             <p className="text-neutral-300 text-lg">Failed to load requests</p>
             <p className="text-neutral-500 text-sm mt-1">
-              Please try again later
+              Invalid password or server error
             </p>
             <motion.button
-              onClick={() => refetch()}
+              onClick={() => setAuthKey(null)}
               className="mt-4 px-4 py-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 rounded-lg transition-colors"
               whileTap={{ scale: 0.95 }}
             >
-              Try Again
+              Try Different Password
             </motion.button>
           </div>
         ) : requests && requests.length > 0 ? (
