@@ -13,11 +13,14 @@ export type ContactRequestResponse = {
   };
 };
 
-const getContactRequests = async (): Promise<ContactRequestResponse[]> => {
+const getContactRequests = async (
+  authKey: string
+): Promise<ContactRequestResponse[]> => {
   const response = await fetch("https://api.aresultz.com/agrosken/contact", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      AuthKey: authKey,
     },
   });
 
@@ -28,9 +31,10 @@ const getContactRequests = async (): Promise<ContactRequestResponse[]> => {
   return response.json();
 };
 
-export const useGetContactRequests = () => {
+export const useGetContactRequests = (authKey: string | null) => {
   return useQuery({
-    queryKey: ["contactRequest"],
-    queryFn: getContactRequests,
+    queryKey: ["contactRequest", authKey],
+    queryFn: () => getContactRequests(authKey!),
+    enabled: !!authKey,
   });
 };
