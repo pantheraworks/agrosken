@@ -5,6 +5,7 @@ import {
   useGetContactRequests,
   type ContactRequestResponse,
 } from "../../hooks/queries/useGetContactRequests";
+import { useUpdateEmailSent } from "../../hooks/mutations/useUpdateEmailSent";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
@@ -28,10 +29,20 @@ const formatDate = (createdAt: ContactRequestResponse["createdAt"]) => {
 const RequestCard = ({
   request,
   index,
+  onToggleEmailSent,
+  isUpdating,
 }: {
   request: ContactRequestResponse;
   index: number;
+  onToggleEmailSent: (id: string, emailSent: boolean) => void;
+  isUpdating: boolean;
 }) => {
+  const handleToggle = () => {
+    if (!isUpdating) {
+      onToggleEmailSent(request.id, !request.emailSent);
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -51,25 +62,24 @@ const RequestCard = ({
             </p>
           </div>
         </div>
-        <div
-          className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium ${
+        <button
+          onClick={handleToggle}
+          disabled={isUpdating}
+          className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium transition-all cursor-pointer hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed ${
             request.emailSent
-              ? "bg-emerald-500/20 text-emerald-400"
-              : "bg-amber-500/20 text-amber-400"
+              ? "bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30"
+              : "bg-amber-500/20 text-amber-400 hover:bg-amber-500/30"
           }`}
         >
-          {request.emailSent ? (
-            <>
-              <CheckCircleIcon className="w-3.5 h-3.5" />
-              Email Sent
-            </>
+          {isUpdating ? (
+            <RefreshIcon className="w-3.5 h-3.5 animate-spin" />
+          ) : request.emailSent ? (
+            <CheckCircleIcon className="w-3.5 h-3.5" />
           ) : (
-            <>
-              <CancelIcon className="w-3.5 h-3.5" />
-              Pending
-            </>
+            <CancelIcon className="w-3.5 h-3.5" />
           )}
-        </div>
+          {request.emailSent ? "Email Sent" : "Pending"}
+        </button>
       </div>
 
       <div className="space-y-3">
@@ -203,6 +213,26 @@ export const AdminDashboard = () => {
     isFetching,
   } = useGetContactRequests(authKey);
 
+  const updateEmailSent = useUpdateEmailSent(authKey || "");
+  const [updatingIds, setUpdatingIds] = useState<Set<string>>(new Set());
+
+  const handleToggleEmailSent = (id: string, emailSent: boolean) => {
+    if (!authKey) return;
+    setUpdatingIds((prev) => new Set(prev).add(id));
+    updateEmailSent.mutate(
+      { id, emailSent, authKey },
+      {
+        onSettled: () => {
+          setUpdatingIds((prev) => {
+            const next = new Set(prev);
+            next.delete(id);
+            return next;
+          });
+        },
+      }
+    );
+  };
+
   const handlePasswordSubmit = (password: string) => {
     setAuthKey(password);
   };
@@ -267,7 +297,13 @@ export const AdminDashboard = () => {
         ) : requests && requests.length > 0 ? (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {requests.map((request, index) => (
-              <RequestCard key={request.id} request={request} index={index} />
+              <RequestCard
+                key={request.id}
+                request={request}
+                index={index}
+                onToggleEmailSent={handleToggleEmailSent}
+                isUpdating={updatingIds.has(request.id)}
+              />
             ))}
           </div>
         ) : (
