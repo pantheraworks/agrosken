@@ -218,28 +218,27 @@ export const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950">
-      {/* Header */}
       <header className="sticky top-0 z-10 backdrop-blur-md bg-neutral-900/80 border-b border-neutral-800">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center justify-between gap-3">
             <div>
-              <h1 className="text-2xl font-bold text-white tracking-tight">
+              <h1 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
                 Admin Dashboard
               </h1>
-              <p className="text-neutral-400 text-sm mt-1">
+              <p className="text-neutral-400 text-xs sm:text-sm mt-0.5 sm:mt-1 hidden sm:block">
                 Contact Request Management
               </p>
             </div>
             <motion.button
               onClick={() => refetch()}
               disabled={isFetching}
-              className="flex items-center gap-2 px-4 py-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 rounded-lg transition-colors border border-amber-500/20"
+              className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 rounded-lg transition-colors border border-amber-500/20 flex-shrink-0"
               whileTap={{ scale: 0.95 }}
             >
               <RefreshIcon
                 className={`w-5 h-5 ${isFetching ? "animate-spin" : ""}`}
               />
-              Refresh
+              <span className="hidden sm:inline">Refresh</span>
             </motion.button>
           </div>
         </div>
