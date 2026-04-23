@@ -27,8 +27,8 @@ const defaultLocale: Locale = "cs-CZ";
 
 const getInitialLocale = (): Locale => {
   const storedLocale = localStorage.getItem(LOCAL_STORAGE_KEY) as Locale;
-  return storedLocale && Object.keys(messages).includes(storedLocale) 
-    ? storedLocale 
+  return storedLocale && Object.keys(messages).includes(storedLocale)
+    ? storedLocale
     : defaultLocale;
 };
 
