@@ -35,7 +35,9 @@ export const useUpdateEmailSent = (authKey: string) => {
   return useMutation({
     mutationFn: updateEmailSent,
     onMutate: async ({ id, emailSent }) => {
-      await queryClient.cancelQueries({ queryKey: ["contactRequest", authKey] });
+      await queryClient.cancelQueries({
+        queryKey: ["contactRequest", authKey],
+      });
 
       const previousData = queryClient.getQueryData<ContactRequestResponse[]>([
         "contactRequest",

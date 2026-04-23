@@ -9,7 +9,7 @@ export const Hero = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const [chevronAnimationOffset, setChevronAnimationOffset] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  
+
   const buttonAnimationDelay = 0.7 + title.length * 0.03;
 
   useEffect(() => {
@@ -68,15 +68,17 @@ export const Hero = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
           <div className="absolute inset-0 -left-2 -right-2 bg-[var(--color-primary-amber)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div 
+          <div
             className="relative bg-[var(--color-primary-amber)] h-full aspect-square rounded-full flex items-center justify-center font-bold transition-all duration-500 group-hover:bg-transparent z-10"
             style={{
-              transform: isHovered ? `translateX(${chevronAnimationOffset}px)` : 'translateX(0px)',
+              transform: isHovered
+                ? `translateX(${chevronAnimationOffset}px)`
+                : "translateX(0px)",
             }}
           >
             <ChevronRightIcon className="h-5 w-5" />
           </div>
-          <div 
+          <div
             ref={textRef}
             className="relative text-lg font-bold transition-all duration-500 group-hover:-translate-x-8 z-10"
           >
